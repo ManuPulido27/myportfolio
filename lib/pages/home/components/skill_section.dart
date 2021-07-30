@@ -8,24 +8,36 @@ import 'package:portfolio/utils/screen_helper.dart';
 
 List<Skill> skills = [
   Skill(
-    skill: "Dart",
-    percentage: 62,
+    skill: "Spanish",
+    percentage: 100,
   ),
   Skill(
-    skill: "Javascript",
-    percentage: 80,
-  ),
-  Skill(
-    skill: "PHP",
-    percentage: 78,
-  ),
-  Skill(
-    skill: "Python",
+    skill: "English",
     percentage: 90,
   ),
   Skill(
-    skill: "GoLang",
+    skill: "Italian",
+    percentage: 80,
+  ),
+  Skill(
+    skill: "Portuguese",
+    percentage: 75,
+  ),
+  Skill(
+    skill: "French",
+    percentage: 20,
+  ),
+  Skill(
+    skill: "Dart",
+    percentage: 70,
+  ),
+  Skill(
+    skill: "Python",
     percentage: 40,
+  ),
+  Skill(
+    skill: "SQL",
+    percentage: 20,
   ),
 ];
 
@@ -70,7 +82,7 @@ class SkillSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "SKILLS",
+                        "LANGUAGES",
                         style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
@@ -116,7 +128,7 @@ class SkillSection extends StatelessWidget {
                                       // remaining (blank part)
                                       flex: 100 - skill.percentage,
                                       child: Divider(
-                                        color: Colors.white,
+                                        color: Colors.blue,
                                       ),
                                     ),
                                     SizedBox(
@@ -125,7 +137,7 @@ class SkillSection extends StatelessWidget {
                                     Text(
                                       "${skill.percentage}%",
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.blue,
                                         fontSize: 16.0,
                                       ),
                                     )

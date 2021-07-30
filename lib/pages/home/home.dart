@@ -34,12 +34,22 @@ class _HomeState extends State<Home> {
     SizedBox(
       height: 20.0,
     ),
-    CvSection(),
     IosAppAd(),
     SizedBox(
       height: 70.0,
     ),
-    WebsiteAd(),
+    IosAppAd(),
+    SizedBox(
+      height: 70.0,
+    ),
+    IosAppAd(),
+    SizedBox(
+      height: 70.0,
+    ),
+    IosAppAd(),
+    SizedBox(
+      height: 70.0,
+    ),
     Padding(
       padding: const EdgeInsets.symmetric(vertical: 28.0),
       child: PortfolioStats(),
@@ -52,10 +62,6 @@ class _HomeState extends State<Home> {
       height: 50.0,
     ),
     SkillSection(),
-    SizedBox(
-      height: 50.0,
-    ),
-    Sponsors(),
     SizedBox(
       height: 50.0,
     ),
@@ -82,7 +88,7 @@ class _HomeState extends State<Home> {
                         cursor: SystemMouseCursors.click,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color: Colors.blue,
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           padding: EdgeInsets.symmetric(horizontal: 28.0),
@@ -142,6 +148,11 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                  Colors.blue,
+                  Colors.white,
+                ])),
                 height: height,
                 child: ScrollablePositionedList.builder(
                   scrollDirection: Axis.vertical,
@@ -207,7 +218,7 @@ class _HomeState extends State<Home> {
               },
               child: Icon(
                 Icons.menu,
-                color: Colors.white,
+                color: Colors.blue,
                 size: 28.0,
               ),
             )
@@ -239,11 +250,10 @@ class _HomeState extends State<Home> {
         },
         index: 0,
         isButton: true),
-    HeaderItem(title: "SERVICES", onTap: () {}, index: 1, isButton: true),
     HeaderItem(title: "PORTFOLIO", onTap: () {}, index: 2, isButton: true),
-    HeaderItem(title: "TESTIMONIALS", onTap: () {}, index: 3, isButton: true),
-    HeaderItem(title: "BLOGS", onTap: () {}, index: 4, isButton: true),
-    HeaderItem(title: "HIRE ME", onTap: () {}, isButton: true, index: 5),
+    HeaderItem(title: "ABOUT ME", onTap: () {}, index: 2, isButton: true),
+    HeaderItem(title: "REFERENCES", onTap: () {}, index: 18, isButton: true),
+    HeaderItem(title: "CONTACT", onTap: () {}, index: 19, isButton: true),
   ];
 
   Widget headerLogo() {
@@ -252,27 +262,45 @@ class _HomeState extends State<Home> {
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: () {},
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "MP",
-                  style: GoogleFonts.oswald(
-                    color: Colors.white,
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+          child: Row(
+            children: [
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "MP",
+                      style: GoogleFonts.oswald(
+                        color: kCaptionColor,
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ".",
+                      style: GoogleFonts.oswald(
+                        color: kPrimaryColor,
+                        fontSize: 36.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-                TextSpan(
-                  text: ".",
-                  style: GoogleFonts.oswald(
-                    color: kPrimaryColor,
-                    fontSize: 36.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ],
-            ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 50,
+                child: Image.asset('argentina.png'),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 50,
+                child: Image.asset('portugal.png'),
+              )
+            ],
           ),
         ),
       ),
@@ -293,7 +321,7 @@ class _HomeState extends State<Home> {
                       cursor: SystemMouseCursors.click,
                       child: Container(
                         decoration: BoxDecoration(
-                          color: kDangerColor,
+                          color: Colors.transparent,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         padding: EdgeInsets.symmetric(
@@ -308,7 +336,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             item.title,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.blue,
                               fontSize: 13.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -325,7 +353,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             item.title,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.blue,
                               fontSize: 13.0,
                               fontWeight: FontWeight.bold,
                             ),

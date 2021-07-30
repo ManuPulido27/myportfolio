@@ -15,9 +15,9 @@ List<CarouselItemModel> carouselItems = List.generate(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "MOBILE DEVELOPER",
+            "JR. MOBILE DEVELOPER",
             style: GoogleFonts.oswald(
-              color: kPrimaryColor,
+              color: Colors.black,
               fontWeight: FontWeight.w900,
               fontSize: 16.0,
             ),
@@ -38,7 +38,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 10.0,
           ),
           Text(
-            "Flutter developer, based in Milano",
+            "Self-Taught Flutter developer, based in Milano",
             style: TextStyle(
               color: kCaptionColor,
               fontSize: 15.0,
@@ -52,7 +52,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             child: Wrap(
               children: [
                 Text(
-                  "Need a full custom website?",
+                  "Experience working on freelance and startup dynamic contexts",
                   style: TextStyle(
                     color: kCaptionColor,
                     fontSize: 15.0,
@@ -64,10 +64,10 @@ List<CarouselItemModel> carouselItems = List.generate(
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Text(
-                      " Got a project? Let's talk.",
+                      "",
                       style: TextStyle(
                         height: 1.5,
-                        color: Colors.white,
+                        color: kCaptionColor,
                         fontSize: 15.0,
                       ),
                     ),
@@ -79,35 +79,12 @@ List<CarouselItemModel> carouselItems = List.generate(
           SizedBox(
             height: 25.0,
           ),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: Container(
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              height: 48.0,
-              padding: EdgeInsets.symmetric(
-                horizontal: 28.0,
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "GET STARTED",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          )
         ],
       ),
     ),
     image: Container(
         child: FlutterLogo(
+      style: FlutterLogoStyle.stacked,
       size: 300,
       curve: Curves.bounceInOut,
       duration: Duration(seconds: 10),

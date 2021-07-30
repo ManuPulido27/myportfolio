@@ -14,7 +14,9 @@ class IosAppAd extends StatefulWidget {
 
 class _IosAppAdState extends State<IosAppAd> {
   List<SlideData> list = [
-    SlideData('This is the 1description of the app', 'screen1.png'),
+    SlideData(
+        'This is the 1description of the appgggggggggsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdgggjujujujujuujujujujujujujujujujujujujujuju',
+        'screen1.png'),
     SlideData('This is the 2description of the app', 'screen2.png'),
     SlideData('This is the 3description of the app', 'screen3.png')
   ];

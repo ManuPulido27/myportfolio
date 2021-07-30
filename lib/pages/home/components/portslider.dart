@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
@@ -20,7 +21,7 @@ class _PortSliderState extends State<PortSlider> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Container(
-      color: Colors.green,
+      color: Colors.transparent,
       height: height * 0.8,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -28,16 +29,17 @@ class _PortSliderState extends State<PortSlider> {
           Align(
             alignment: Alignment.topCenter,
             child: Container(
-              color: Colors.red,
+              color: Colors.transparent,
               height: height * 0.75,
               width: width,
               child: CarouselSlider.builder(
                 options: CarouselOptions(
-                    autoPlayInterval: Duration(seconds: 10),
+                    pauseAutoPlayOnTouch: true,
+                    autoPlayInterval: Duration(seconds: 5),
                     autoPlayAnimationDuration: Duration(milliseconds: 700),
                     enableInfiniteScroll: false,
                     height: height * 0.65,
-                    autoPlay: false,
+                    autoPlay: true,
                     enlargeCenterPage: true,
                     // aspectRatio: 2.0,
                     onPageChanged: (index, reason) {
@@ -48,25 +50,33 @@ class _PortSliderState extends State<PortSlider> {
                 itemCount: widget.slides.length,
                 itemBuilder: (BuildContext context, int index, int zindex) =>
                     Container(
-                  color: Colors.blue,
-                  height: height * 0.60,
+                  color: Colors.transparent,
+                  height: height * 0.64,
                   width: width,
                   child: Column(
                     children: [
-                      Container(
-                        color: Colors.lightBlueAccent,
-                        child: Image.asset(
-                          widget.slides[index].fileName,
-                          fit: BoxFit.contain,
-                          height: height * 0.50,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Container(
+                          color: Colors.transparent,
+                          child: Image.asset(
+                            widget.slides[index].fileName,
+                            fit: BoxFit.contain,
+                            height: height * 0.50,
+                          ),
                         ),
                       ),
                       Container(
-                        child: Text(
-                          widget.slides[index].description,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                        height: index == _current ? height * 0.10 : 0,
+                        child: Center(
+                          child: AutoSizeText(
+                            widget.slides[index].description,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
                         ),
-                        color: Colors.blueGrey,
+                        color: Colors.transparent,
                       )
                     ],
                   ),
@@ -75,7 +85,7 @@ class _PortSliderState extends State<PortSlider> {
             ),
           ),
           Container(
-            color: Colors.orange,
+            color: Colors.transparent,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: widget.slides.length > 1
