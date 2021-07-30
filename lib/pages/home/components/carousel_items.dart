@@ -15,7 +15,7 @@ List<CarouselItemModel> carouselItems = List.generate(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "PRODUCT DESIGNER",
+            "MOBILE DEVELOPER",
             style: GoogleFonts.oswald(
               color: kPrimaryColor,
               fontWeight: FontWeight.w900,
@@ -26,7 +26,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 18.0,
           ),
           Text(
-            "MICHELE\nHARRINGTON",
+            "MANUEL IGNACIO\n PULIDO GARCÍA",
             style: GoogleFonts.oswald(
               color: Colors.white,
               fontSize: 40.0,
@@ -38,7 +38,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 10.0,
           ),
           Text(
-            "Full-stack developer, based in Barcelona",
+            "Flutter developer, based in Milano",
             style: TextStyle(
               color: kCaptionColor,
               fontSize: 15.0,
@@ -107,10 +107,10 @@ List<CarouselItemModel> carouselItems = List.generate(
       ),
     ),
     image: Container(
-      child: Image.asset(
-        "assets/person.png",
-        fit: BoxFit.contain,
-      ),
-    ),
+        child: FlutterLogo(
+      size: 300,
+      curve: Curves.bounceInOut,
+      duration: Duration(seconds: 10),
+    )),
   ),
 );

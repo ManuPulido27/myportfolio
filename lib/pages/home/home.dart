@@ -6,7 +6,7 @@ import 'package:portfolio/pages/home/components/carousel.dart';
 import 'package:portfolio/pages/home/components/cv_section.dart';
 import 'package:portfolio/pages/home/components/education_section.dart';
 import 'package:portfolio/pages/home/components/footer.dart';
-import 'package:portfolio/pages/home/components/header.dart';
+
 import 'package:portfolio/pages/home/components/ios_app_ad.dart';
 import 'package:portfolio/pages/home/components/portfolio_stats.dart';
 import 'package:portfolio/pages/home/components/skill_section.dart';
@@ -82,12 +82,18 @@ class _HomeState extends State<Home> {
                         cursor: SystemMouseCursors.click,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: kDangerColor,
+                            color: Colors.black,
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           padding: EdgeInsets.symmetric(horizontal: 28.0),
                           child: TextButton(
-                            onPressed: headerItems[index].onTap,
+                            onPressed: () {
+                              itemScrollController.scrollTo(
+                                  index: headerItems[index].index,
+                                  duration: Duration(seconds: 2),
+                                  curve: Curves.easeInOutCubic);
+                              Navigator.of(context).pop();
+                            },
                             child: Text(
                               headerItems[index].title,
                               style: TextStyle(
@@ -200,7 +206,7 @@ class _HomeState extends State<Home> {
                 Globals.scaffoldKey.currentState!.openEndDrawer();
               },
               child: Icon(
-                Icons.access_alarm_outlined,
+                Icons.menu,
                 color: Colors.white,
                 size: 28.0,
               ),
@@ -227,21 +233,17 @@ class _HomeState extends State<Home> {
 
   List<HeaderItem> headerItems = [
     HeaderItem(
-      title: "HOME",
-      onTap: () {
-        print('home on home!');
-      },
-    ),
-    HeaderItem(title: "MY INTRO", onTap: () {}),
-    HeaderItem(title: "SERVICES", onTap: () {}),
-    HeaderItem(title: "PORTFOLIO", onTap: () {}),
-    HeaderItem(title: "TESTIMONIALS", onTap: () {}),
-    HeaderItem(title: "BLOGS", onTap: () {}),
-    HeaderItem(
-      title: "HIRE ME",
-      onTap: () {},
-      isButton: true,
-    ),
+        title: "HOME",
+        onTap: () {
+          print('');
+        },
+        index: 0,
+        isButton: true),
+    HeaderItem(title: "SERVICES", onTap: () {}, index: 1, isButton: true),
+    HeaderItem(title: "PORTFOLIO", onTap: () {}, index: 2, isButton: true),
+    HeaderItem(title: "TESTIMONIALS", onTap: () {}, index: 3, isButton: true),
+    HeaderItem(title: "BLOGS", onTap: () {}, index: 4, isButton: true),
+    HeaderItem(title: "HIRE ME", onTap: () {}, isButton: true, index: 5),
   ];
 
   Widget headerLogo() {
@@ -297,7 +299,12 @@ class _HomeState extends State<Home> {
                         padding: EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 5.0),
                         child: TextButton(
-                          onPressed: item.onTap,
+                          onPressed: () {
+                            itemScrollController.scrollTo(
+                                index: item.index,
+                                duration: Duration(seconds: 2),
+                                curve: Curves.easeInOutCubic);
+                          },
                           child: Text(
                             item.title,
                             style: TextStyle(
