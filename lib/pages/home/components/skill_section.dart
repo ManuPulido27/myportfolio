@@ -7,15 +7,15 @@ import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 
 List<Skill> skills = [
-  Skill(skill: "Dart", percentage: 70, icon: 'dart.png'),
+  Skill(skill: "Dart", percentage: 60, icon: 'dart.png'),
   Skill(
     skill: "Python",
-    percentage: 40,
+    percentage: 30,
     icon: 'py.png',
   ),
   Skill(
     skill: "SQL",
-    percentage: 20,
+    percentage: 10,
     icon: 'sql.png',
   ),
 ];
