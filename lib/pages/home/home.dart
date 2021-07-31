@@ -10,6 +10,7 @@ import 'package:portfolio/pages/home/components/footer.dart';
 import 'package:portfolio/pages/home/components/ios_app_ad.dart';
 import 'package:portfolio/pages/home/components/portfolio_stats.dart';
 import 'package:portfolio/pages/home/components/skill_section.dart';
+import 'package:portfolio/pages/home/components/skills2.dart';
 import 'package:portfolio/pages/home/components/sponsors.dart';
 import 'package:portfolio/pages/home/components/testimonial_widget.dart';
 import 'package:portfolio/pages/home/components/website_ad.dart';
@@ -18,6 +19,7 @@ import 'package:portfolio/utils/globals.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'components/animatedlogo.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -60,6 +62,10 @@ class _HomeState extends State<Home> {
     EducationSection(),
     SizedBox(
       height: 50.0,
+    ),
+    SkillsTwo(),
+    SizedBox(
+      height: 70,
     ),
     SkillSection(),
     SizedBox(
@@ -151,7 +157,7 @@ class _HomeState extends State<Home> {
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
                   Colors.blue,
-                  Colors.white,
+                  Colors.white70,
                 ])),
                 height: height,
                 child: ScrollablePositionedList.builder(
@@ -291,7 +297,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 height: 50,
-                child: Image.asset('argentina.png'),
+                child: Image.asset('argentinaa.png'),
               ),
               SizedBox(
                 width: 10,

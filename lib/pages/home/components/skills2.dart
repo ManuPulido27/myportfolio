@@ -7,20 +7,18 @@ import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 
 List<Skill> skills = [
-  Skill(skill: "Dart", percentage: 70, icon: 'dart.png'),
   Skill(
-    skill: "Python",
-    percentage: 40,
-    icon: 'py.png',
+    skill: "Spanish",
+    percentage: 100,
+    icon: 'argentinaa.png',
   ),
-  Skill(
-    skill: "SQL",
-    percentage: 20,
-    icon: 'sql.png',
-  ),
+  Skill(skill: "English", percentage: 90, icon: 'us.png'),
+  Skill(skill: "Italian", percentage: 80, icon: 'italy.png'),
+  Skill(skill: "Portuguese", percentage: 75, icon: 'portugal.png'),
+  Skill(skill: "French", percentage: 20, icon: 'france.png'),
 ];
 
-class SkillSection extends StatelessWidget {
+class SkillsTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,7 +45,7 @@ class SkillSection extends StatelessWidget {
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
                   child: Image.asset(
-                    "code.png",
+                    "languages.png",
                     width: 300.0,
                   ),
                 ),
@@ -61,7 +59,7 @@ class SkillSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "PROGRAMMING LANGUAGES",
+                        "LANGUAGES",
                         style: GoogleFonts.oswald(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
