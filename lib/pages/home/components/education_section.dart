@@ -49,10 +49,6 @@ class EducationSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 28.0),
-              child: PortfolioStats(),
-            ),
             Text(
               "EDUCATION",
               style: GoogleFonts.oswald(

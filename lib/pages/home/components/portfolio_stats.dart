@@ -33,41 +33,77 @@ class PortfolioStats extends StatelessWidget {
         defaultScale: false,
         child: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraint) {
-            return Wrap(
-              spacing: 20.0,
-              runSpacing: 20.0,
-              children: stats.map((stat) {
-                return Container(
-                  padding: EdgeInsets.symmetric(vertical: 15.0),
-                  // Just use the helper here really
-                  width: ScreenHelper.isMobile(context)
-                      ? constraint.maxWidth / 2.0 - 20
-                      : (constraint.maxWidth / 4.0 - 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        stat.count,
-                        style: GoogleFonts.oswald(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 32.0,
-                          color: Colors.white,
+            return Container(
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    color: Colors.green,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "ABOUT ME",
+                          style: GoogleFonts.oswald(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 30.0,
+                            height: 1.3,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        stat.text,
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: kCaptionColor,
-                        ),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
-                );
-              }).toList(),
+                  Wrap(
+                    spacing: 20.0,
+                    runSpacing: 20.0,
+                    children: stats.map((stat) {
+                      return Container(
+                        padding: EdgeInsets.symmetric(vertical: 15.0),
+                        // Just use the helper here really
+                        width: ScreenHelper.isMobile(context)
+                            ? constraint.maxWidth / 2.0 - 20
+                            : (constraint.maxWidth / 4.0 - 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              stat.count,
+                              style: GoogleFonts.oswald(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 32.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Text(
+                              stat.text,
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                color: kCaptionColor,
+                              ),
+                            )
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    color: Colors.green,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('skill 1'),
+                        Text('skill 2'),
+                        Text('skill 3')
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),
