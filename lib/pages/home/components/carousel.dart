@@ -21,14 +21,14 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
   animationFunc() async {
     controller =
-        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.elasticInOut)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
-          Future.delayed(Duration(seconds: 4))
+          Future.delayed(Duration(seconds: 3))
               .then((value) => controller.reverse());
         } else if (status == AnimationStatus.dismissed) {
-          Future.delayed(Duration(seconds: 4))
+          Future.delayed(Duration(seconds: 3))
               .then((value) => controller.forward());
         }
       });
