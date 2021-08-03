@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/stat.dart';
@@ -10,6 +11,7 @@ final List<Stat> stats = [
   Stat(count: "2", text: "Clients"),
   Stat(count: "5", text: "Projects"),
   Stat(count: "1.5", text: "Years\nExperience"),
+  Stat(count: '2', text: 'Apps\nPublished')
 ];
 
 class PortfolioStats extends StatelessWidget {
@@ -38,7 +40,6 @@ class PortfolioStats extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    color: Colors.green,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -53,6 +54,9 @@ class PortfolioStats extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 50,
                   ),
                   Wrap(
                     spacing: 20.0,
@@ -90,13 +94,34 @@ class PortfolioStats extends StatelessWidget {
                       );
                     }).toList(),
                   ),
+                  SizedBox(
+                    height: 35,
+                  ),
                   Container(
                     width: double.infinity,
-                    color: Colors.green,
+                    // color: Colors.green,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('skill 1'),
+                        Row(
+                          children: [
+                            Container(
+                              height: 50,
+                              child: Image.asset('point.png'),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            AutoSizeText(
+                              'Experience Building Responsive and Adaptive UI',
+                              minFontSize: 15,
+                              style: GoogleFonts.oswald(
+                                color: Colors.white,
+                                height: 1,
+                              ),
+                            ),
+                          ],
+                        ),
                         Text('skill 2'),
                         Text('skill 3')
                       ],

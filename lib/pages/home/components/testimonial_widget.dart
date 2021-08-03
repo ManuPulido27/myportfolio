@@ -8,16 +8,16 @@ import 'package:portfolio/utils/screen_helper.dart';
 final List<Testimonial> testimonials = [
   Testimonial(
     text:
-        "This is a testimonial text from Janny Stone. Michele is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
-    occupation: "Product Designer",
-    personName: "JANNY STONE",
+        '\'\'Manuel is a very fast learner. He knows how to solve problems and take the projects forward under stress. Whenever he reached a roadblock on the development of imercita, he did not stop until he found a solution for it. This proactive attitude makes him a valuable asset to any small team. He is a good communicator, thinks on his feet and clarifies the issues ot his team members. He was fast in UX implementation on all device sizes both on Android and iOS. I look forward to working with him on more upcoming projects.\'\'',
+    occupation: "CEO - Imercita",
+    personName: "Sharzad Behzadian",
     profilePhoto: "assets/female.png",
   ),
   Testimonial(
     text:
-        "This is a testimonial text from Ken Williams. Michele is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
-    occupation: "Art Director",
-    personName: "KEN WILLIAMS",
+        '\'\'Manuel worked with us when we were considering to migrate our app to Flutter, he created a new user interface following our specifications in no time, and also contributing with his ideas. If we decide to go all the way with Flutter, we will definitely contact him again due to his work ethic, comunication and design skills.\'\'',
+    occupation: "Co-Founder - ChargeSurfing",
+    personName: "Sergio Almeida",
     profilePhoto: "assets/male.png",
   )
 ];
@@ -47,7 +47,7 @@ Widget _buildUi(double width) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "TESTIMONIALS",
+                "REFERENCES",
                 style: GoogleFonts.oswald(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -57,31 +57,6 @@ Widget _buildUi(double width) {
               ),
               SizedBox(
                 height: 5.0,
-              ),
-              Container(
-                constraints: BoxConstraints(maxWidth: 400.0),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text:
-                            "This is the portfolio section. There is alot of work here",
-                        style: TextStyle(color: Colors.white, height: 1.8),
-                      ),
-                      TextSpan(
-                          text: " click here to contact us",
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w700,
-                            height: 1.8,
-                          )),
-                      TextSpan(
-                        text: ". Please subscribe to me youtube channel :-)",
-                        style: TextStyle(color: Colors.white, height: 1.8),
-                      ),
-                    ],
-                  ),
-                ),
               ),
               SizedBox(
                 height: 45.0,
@@ -100,20 +75,23 @@ Widget _buildUi(double width) {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            child: Image.asset(
-                              "assets/quote.png",
-                              width: 50.0,
-                            ),
-                          ),
                           SizedBox(
                             height: 15.0,
                           ),
-                          Text(
-                            testimonial.text,
-                            style: TextStyle(
-                              color: kCaptionColor,
-                              height: 1.8,
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Container(
+                              color: Colors.white70,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  testimonial.text,
+                                  style: TextStyle(
+                                    color: kCaptionColor,
+                                    height: 1.8,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(

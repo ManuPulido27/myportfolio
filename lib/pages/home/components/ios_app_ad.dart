@@ -106,6 +106,7 @@ class _IosAppAdState extends State<IosAppAd> {
                             height: 25.0,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
@@ -136,33 +137,6 @@ class _IosAppAdState extends State<IosAppAd> {
                               SizedBox(
                                 width: 10.0,
                               ),
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    border: Border.all(
-                                      color: kPrimaryColor,
-                                    ),
-                                  ),
-                                  height: 48.0,
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 28.0),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Center(
-                                      child: Text(
-                                        "NEXT APP",
-                                        style: TextStyle(
-                                          color: kPrimaryColor,
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              )
                             ],
                           )
                         ],

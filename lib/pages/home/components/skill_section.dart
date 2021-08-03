@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/skill.dart';
@@ -14,7 +15,7 @@ List<Skill> skills = [
     icon: 'py.png',
   ),
   Skill(
-    skill: "SQL",
+    skill: "Sql",
     percentage: 10,
     icon: 'sql.png',
   ),
@@ -93,7 +94,7 @@ class SkillSection extends StatelessWidget {
                                         padding: EdgeInsets.only(left: 10.0),
                                         alignment: Alignment.centerLeft,
                                         height: 38.0,
-                                        child: Text(skill.skill),
+                                        child: AutoSizeText(skill.skill),
                                         color: Colors.white,
                                       ),
                                     ),

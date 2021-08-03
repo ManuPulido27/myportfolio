@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:portfolio/pages/home/components/carousel_items.dart';
@@ -70,7 +72,26 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
         children: [
           Container(
             alignment: Alignment.center,
-            child: CarouselSlider(
+            child: Container(
+              constraints: BoxConstraints(
+                minHeight: carouselContainerHeight,
+              ),
+              child: ScreenHelper(
+                // Responsive views
+                desktop:
+                    _buildDesktop(context, textWidget(), animation, controller
+                        //carouselItems[index].image,
+                        ),
+                tablet: _buildTablet(context, textWidget(), animation
+                    //carouselItems[index].image,
+                    ),
+                mobile: _buildMobile(
+                  context,
+                  textWidget(),
+                  //carouselItems[index].image,
+                ),
+              ),
+            ) /*CarouselSlider(
               carouselController: carouselController,
               options: CarouselOptions(
                 // autoPlay: true,
@@ -106,7 +127,8 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                   },
                 ),
               ).toList(),
-            ),
+            ),*/
+            ,
           )
         ],
       ),
@@ -118,6 +140,140 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+}
+
+Widget textWidget() {
+  return Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          height: 18.0,
+        ),
+        Row(
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.white70,
+              radius: 100,
+              backgroundImage: AssetImage('circle-cropped.png'),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            AutoSizeText(
+              "MANUEL\n PULIDO",
+              minFontSize: 40,
+              maxFontSize: 50,
+              style: GoogleFonts.oswald(
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 30.0,
+        ),
+        Text(
+          "JR. Flutter developer, based in Milano",
+          style: TextStyle(
+            color: kCaptionColor,
+            fontSize: 20.0,
+            height: 1.0,
+          ),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Container(
+          child: Wrap(
+            children: [
+              Text(
+                "Experience working on freelance and startup dynamic contexts",
+                style: TextStyle(
+                  color: kCaptionColor,
+                  fontSize: 17.0,
+                  height: 1.5,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Text(
+          "Economics student",
+          style: TextStyle(
+            color: kCaptionColor,
+            fontSize: 17.0,
+            height: 1.0,
+          ),
+        ),
+        SizedBox(
+          height: 25.0,
+        ),
+        Row(
+          children: [
+            GestureDetector(
+              onTap: () {},
+              child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      color: Colors.white,
+                      height: 50,
+                      child: Image.asset('linkedin.png'),
+                    ),
+                  )),
+            ),
+            SizedBox(
+              width: 25.0,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: Container(
+                    height: 50,
+                    child: Image.asset('github-sign.png'),
+                  )),
+            ),
+            SizedBox(
+              width: 25.0,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      height: 50,
+                      child: Image.asset('playstoree.png'),
+                    ),
+                  )),
+            ),
+            SizedBox(
+              width: 25.0,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      height: 50,
+                      child: Image.asset('applee.png'),
+                    ),
+                  )),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
 }
 
 // Big screens

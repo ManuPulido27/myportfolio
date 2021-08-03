@@ -154,19 +154,26 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
+                /* decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
                   Colors.blue,
                   Colors.white70,
-                ])),
+                ])),*/
                 height: height,
-                child: ScrollablePositionedList.builder(
-                  scrollDirection: Axis.vertical,
-                  itemScrollController: itemScrollController,
-                  itemCount: widgetlist.length,
-                  itemBuilder: (context, index) {
-                    return Container(child: widgetlist[index]);
-                  },
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient:
+                        LinearGradient(colors: [Colors.blue, Colors.white70]),
+                    backgroundBlendMode: BlendMode.srcOver,
+                  ),
+                  child: ScrollablePositionedList.builder(
+                    scrollDirection: Axis.vertical,
+                    itemScrollController: itemScrollController,
+                    itemCount: widgetlist.length,
+                    itemBuilder: (context, index) {
+                      return Container(child: widgetlist[index]);
+                    },
+                  ),
                 ),
               )
               /* Carousel(),
