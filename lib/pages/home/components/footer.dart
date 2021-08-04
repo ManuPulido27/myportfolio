@@ -5,32 +5,29 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:portfolio/models/footer_item.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final List<FooterItem> footerItems = [
   FooterItem(
-    iconPath: "assets/mappin.png",
-    title: "ADDRESS",
-    text1: "999 Carter Street",
-    text2: "Sailor Springs, IL 64234",
-  ),
+      iconPath: "assets/gmail.png",
+      title: "EMAIL",
+      text1: "manupulido98@gmail.com",
+      linkName: ''),
   FooterItem(
-    iconPath: "assets/phone.png",
-    title: "PHONE",
-    text1: "+1 618-689-9604",
-    text2: "+1 781-689-9632",
-  ),
+      iconPath: "assets/w.png",
+      title: "WHATSAPP",
+      text1: "+93 721 7187",
+      linkName: ''),
   FooterItem(
-    iconPath: "assets/email.png",
-    title: "EMAIL",
-    text1: "hello@example.com",
-    text2: "info@flutterpanda.com",
-  ),
+      iconPath: "assets/linkedin.png",
+      title: "LinkedIn",
+      text1: "",
+      linkName: ''),
   FooterItem(
-    iconPath: "assets/whatsapp.png",
-    title: "WHATSAPP",
-    text1: "+234 901-134-0095",
-    text2: "+234 901-134-0095",
-  )
+      iconPath: "assets/github-sign.png",
+      title: "GITHUB",
+      text1: "",
+      linkName: ''),
 ];
 
 class Footer extends StatelessWidget {
@@ -57,6 +54,24 @@ Widget _buildUi(double width, BuildContext context) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 45.0,
+              ),
+              Text(
+                "CONTACT",
+                style: GoogleFonts.oswald(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 30.0,
+                  height: 1.3,
+                ),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              SizedBox(
+                height: 45.0,
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 50.0),
                 child: Wrap(
@@ -69,54 +84,69 @@ Widget _buildUi(double width, BuildContext context) {
                           width: ScreenHelper.isMobile(context)
                               ? constraints.maxWidth / 2.0 - 20.0
                               : constraints.maxWidth / 4.0 - 20.0,
-                          child: Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                          child: GestureDetector(
+                            onTap: () async {
+                              var url = footerItem.linkName;
+
+                              await launch(
+                                url,
+                                universalLinksOnly: true,
+                              );
+                            },
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Image.asset(
-                                      footerItem.iconPath,
-                                      width: 25.0,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Container(
+                                            height: 50,
+                                            color: Colors.transparent,
+                                            child: Image.asset(
+                                              footerItem.iconPath,
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 15.0,
+                                        ),
+                                        Text(
+                                          footerItem.title,
+                                          style: GoogleFonts.oswald(
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     SizedBox(
-                                      width: 15.0,
+                                      height: 15.0,
                                     ),
-                                    Text(
-                                      footerItem.title,
-                                      style: GoogleFonts.oswald(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
+                                    RichText(
+                                      textAlign: TextAlign.start,
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: "${footerItem.text1}\n",
+                                            style: TextStyle(
+                                              color: kCaptionColor,
+                                              height: 1.8,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ),
+                                    )
                                   ],
                                 ),
-                                SizedBox(
-                                  height: 15.0,
-                                ),
-                                RichText(
-                                  textAlign: TextAlign.start,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: "${footerItem.text1}\n",
-                                        style: TextStyle(
-                                          color: kCaptionColor,
-                                          height: 1.8,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: "${footerItem.text2}\n",
-                                        style: TextStyle(
-                                          color: kCaptionColor,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                )
-                              ],
+                              ),
                             ),
                           ),
                         ),
@@ -138,7 +168,7 @@ Widget _buildUi(double width, BuildContext context) {
                   Padding(
                     padding: EdgeInsets.only(bottom: 8.0),
                     child: Text(
-                      "Copyright (c) 2021 Michele Harrington. All rights Reserved",
+                      "Copyright (c) 2021 Manuel Pulido. All rights Reserved",
                       style: TextStyle(
                         color: kCaptionColor,
                       ),
@@ -152,34 +182,13 @@ Widget _buildUi(double width, BuildContext context) {
                         child: MouseRegion(
                           cursor: SystemMouseCursors.click,
                           child: Text(
-                            "Privacy Policy",
+                            "Built entirely using Flutter",
                             style: TextStyle(
                               color: kCaptionColor,
                             ),
                           ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Text(
-                          "|",
-                          style: TextStyle(
-                            color: kCaptionColor,
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: Text(
-                            "Terms & Conditions",
-                            style: TextStyle(
-                              color: kCaptionColor,
-                            ),
-                          ),
-                        ),
-                      )
                     ],
                   )
                 ],

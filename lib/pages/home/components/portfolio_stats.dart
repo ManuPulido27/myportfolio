@@ -413,6 +413,12 @@ class _PortfolioStatsState extends State<PortfolioStats>
       ),
     );
   }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
 
 class AnimateedLogo extends AnimatedWidget {

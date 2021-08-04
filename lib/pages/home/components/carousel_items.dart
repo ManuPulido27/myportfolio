@@ -60,7 +60,7 @@ List<CarouselItemModel> carouselItems = List.generate(
                   child: Wrap(
                     children: [
                       Text(
-                        "Experience working on freelance and startup dynamic contexts",
+                        "Experience working on freelance and startup contexts",
                         style: TextStyle(
                           color: kCaptionColor,
                           fontSize: 17.0,

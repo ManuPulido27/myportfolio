@@ -102,7 +102,7 @@ class SkillsTwo extends StatelessWidget {
                                       // remaining (blank part)
                                       flex: 100 - skill.percentage,
                                       child: Divider(
-                                        color: Colors.blue,
+                                        color: Colors.white,
                                       ),
                                     ),
                                     SizedBox(
@@ -111,7 +111,7 @@ class SkillsTwo extends StatelessWidget {
                                     Text(
                                       "${skill.percentage}%",
                                       style: TextStyle(
-                                        color: Colors.blue,
+                                        color: Colors.white,
                                         fontSize: 16.0,
                                       ),
                                     )

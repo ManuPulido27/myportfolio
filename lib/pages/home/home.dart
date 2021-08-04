@@ -11,6 +11,7 @@ import 'package:portfolio/pages/home/components/footer.dart';
 
 import 'package:portfolio/pages/home/components/ios_app_ad.dart';
 import 'package:portfolio/pages/home/components/politic.dart';
+import 'package:portfolio/pages/home/components/portfolio.dart';
 import 'package:portfolio/pages/home/components/portfolio_stats.dart';
 import 'package:portfolio/pages/home/components/skill_section.dart';
 import 'package:portfolio/pages/home/components/skills2.dart';
@@ -39,6 +40,7 @@ class _HomeState extends State<Home> {
     SizedBox(
       height: 20.0,
     ),
+    Portfolio(),
     Politic(),
     SizedBox(
       height: 70.0,
@@ -107,7 +109,6 @@ class _HomeState extends State<Home> {
                                   index: headerItems[index].index,
                                   duration: Duration(seconds: 2),
                                   curve: Curves.easeInOutCubic);
-                              Navigator.of(context).pop();
                             },
                             child: Text(
                               headerItems[index].title,
