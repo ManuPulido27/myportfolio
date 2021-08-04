@@ -14,15 +14,13 @@ class IosAppAd extends StatefulWidget {
 
 class _IosAppAdState extends State<IosAppAd> {
   List<SlideData> list = [
-    SlideData(
-        'This is the 1description of the appgggggggggsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdgggjujujujujuujujujujujujujujujujujujujujuju',
-        'io11.png'),
-    SlideData('This is the 2description of the app', 'io22.png'),
-    SlideData('This is the 3description of the app', 'io33.png'),
-    SlideData('This is the 3description of the app', 'io44.png'),
-    SlideData('This is the 3description of the app', 'io55.png'),
-    SlideData('This is the 3description of the app', 'io66.png'),
-    SlideData('This is the 3description of the app', 'io77.png'),
+    SlideData('', 'io11.png'),
+    SlideData('', 'io222.png'),
+    SlideData('', 'io33333.png'),
+    SlideData('', 'io444.png'),
+    SlideData('', 'io555.png'),
+    SlideData('', 'io7777.png'),
+    SlideData('', 'io8888.png'),
   ];
 
   @override
@@ -71,79 +69,112 @@ class _IosAppAdState extends State<IosAppAd> {
                     ),
                     Expanded(
                       flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "IOS APP",
-                            style: GoogleFonts.oswald(
-                              color: kPrimaryColor,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 16.0,
-                            ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.purple,
                           ),
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          Text(
-                            "UNIVERSAL\nSMART HOME APP",
-                            style: GoogleFonts.oswald(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w900,
-                              height: 1.3,
-                              fontSize: 35.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "This is a random text about the project, I should have used the regular lorem ipsum text, but I am too lazy to search for that. This should be long enough",
-                            style: TextStyle(
-                              color: kCaptionColor,
-                              height: 1.5,
-                              fontSize: 15.0,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 25.0,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: kPrimaryColor,
-                                    borderRadius: BorderRadius.circular(8.0),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            border: Border.all(
+                                                color: Colors.purple)),
+                                        height: 50,
+                                        width: 50,
+                                        child: Image.asset('assets/1024.png'),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.transparent,
+                                        ),
+                                        height: 50,
+                                        width: 50,
+                                        child: Image.asset('assets/applee.png'),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 15.0,
+                                ),
+                                Text(
+                                  "IMERCITA",
+                                  style: GoogleFonts.oswald(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w900,
+                                    height: 1.3,
+                                    fontSize: 35.0,
                                   ),
-                                  height: 48.0,
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 28.0,
+                                ),
+                                SizedBox(
+                                  height: 10.0,
+                                ),
+                                Text(
+                                  "This is was my first flutter project. It is an app with the objective to inform people about basic politc related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    height: 1.5,
+                                    fontSize: 15.0,
                                   ),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Center(
-                                      child: Text(
-                                        "EXPLORE MORE",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.bold,
+                                ),
+                                SizedBox(
+                                  height: 25.0,
+                                ),
+                                /* Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: kPrimaryColor,
+                                          borderRadius: BorderRadius.circular(8.0),
+                                        ),
+                                        height: 48.0,
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 28.0,
+                                        ),
+                                        child: TextButton(
+                                          onPressed: () {},
+                                          child: Center(
+                                            child: Text(
+                                              "EXPLORE MORE",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 13.0,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                            ],
-                          )
-                        ],
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                  ],
+                                )*/
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     )
                   ],

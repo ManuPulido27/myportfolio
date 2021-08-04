@@ -62,11 +62,11 @@ class _PortSliderState extends State<PortSlider> {
                           child: Image.asset(
                             widget.slides[index].fileName,
                             fit: BoxFit.contain,
-                            height: height * 0.50,
+                            height: height * 0.55,
                           ),
                         ),
                       ),
-                      Container(
+                      /* Container(
                         height: index == _current ? height * 0.10 : 0,
                         child: Center(
                           child: AutoSizeText(
@@ -77,7 +77,7 @@ class _PortSliderState extends State<PortSlider> {
                           ),
                         ),
                         color: Colors.transparent,
-                      )
+                      )*/
                     ],
                   ),
                 ),

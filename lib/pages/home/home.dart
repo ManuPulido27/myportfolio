@@ -165,8 +165,9 @@ class _HomeState extends State<Home> {
                 height: height,
                 child: Container(
                   decoration: BoxDecoration(
-                    gradient:
-                        LinearGradient(colors: [Colors.blue, Colors.white70]),
+                    //gradient:
+                    //LinearGradient(colors: [Colors.blue, Colors.white70]),
+                    color: Colors.blueGrey.shade300,
                     backgroundBlendMode: BlendMode.srcOver,
                   ),
                   child: ScrollablePositionedList.builder(
