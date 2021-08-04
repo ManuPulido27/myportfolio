@@ -14,7 +14,34 @@ final List<Stat> stats = [
   Stat(count: '2', text: 'Apps\nPublished')
 ];
 
-class PortfolioStats extends StatelessWidget {
+class PortfolioStats extends StatefulWidget {
+  @override
+  _PortfolioStatsState createState() => _PortfolioStatsState();
+}
+
+class _PortfolioStatsState extends State<PortfolioStats>
+    with SingleTickerProviderStateMixin {
+  late Animation<double> animation;
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          Future.delayed(Duration(seconds: 0))
+              .then((value) => controller.reverse());
+        } else if (status == AnimationStatus.dismissed) {
+          Future.delayed(Duration(seconds: 2))
+              .then((value) => controller.forward());
+        }
+      });
+    Future.delayed(Duration(seconds: 2)).then((value) => controller.forward());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -103,27 +130,278 @@ class PortfolioStats extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 50,
-                              child: Image.asset('point.png'),
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            AutoSizeText(
-                              'Experience Building Responsive and Adaptive UI',
-                              minFontSize: 15,
-                              style: GoogleFonts.oswald(
-                                color: Colors.white,
-                                height: 1,
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Experience Building Responsive and Adaptive UI',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                        Text('skill 2'),
-                        Text('skill 3')
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Experience working with APIs',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Experience with dynamic translation of in-app content',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Experience working with Geofences and Location-driven data',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Experience with the distribution and publishing process to both\n App Store and Play Store',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Experience with GIT version control',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Strong Communication skills, active listener',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 50,
+                                child: AnimateedLogo(
+                                  animation: animation,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: Container(
+                                  color: Colors.white70,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: AutoSizeText(
+                                      'Insatiable learner, curious by nature',
+                                      style: GoogleFonts.oswald(
+                                        fontSize: width * 0.025,
+                                        color: Colors.black,
+                                        height: 1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -131,6 +409,35 @@ class PortfolioStats extends StatelessWidget {
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+class AnimateedLogo extends AnimatedWidget {
+  const AnimateedLogo({
+    Key? key,
+    required Animation<double> animation,
+  }) : super(key: key, listenable: animation);
+
+  // Make the Tweens static because they don't change.
+  static final _opacityTween = Tween<double>(begin: 0.9, end: 1);
+  static final _sizeTween = Tween<double>(begin: 50, end: 80);
+
+  @override
+  Widget build(BuildContext context) {
+    final animation = listenable as Animation<double>;
+    return Center(
+      child: Opacity(
+        opacity: _opacityTween.evaluate(animation),
+        child: Container(
+          height: _sizeTween.evaluate(animation),
+          width: _sizeTween.evaluate(animation),
+          child: Container(
+            height: 50,
+            child: Image.asset('point.png'),
+          ),
         ),
       ),
     );

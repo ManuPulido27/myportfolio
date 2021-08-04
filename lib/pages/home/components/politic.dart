@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/slidedata.dart';
 import 'package:portfolio/pages/home/components/portslider.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
 
-class IosAppAd extends StatefulWidget {
+class Politic extends StatefulWidget {
   @override
-  _IosAppAdState createState() => _IosAppAdState();
+  _PoliticState createState() => _PoliticState();
 }
 
-class _IosAppAdState extends State<IosAppAd> {
+class _PoliticState extends State<Politic> {
   List<SlideData> list = [
     SlideData(
         'This is the 1description of the appgggggggggsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdgggjujujujujuujujujujujujujujujujujujujujuju',
-        'io11.png'),
-    SlideData('This is the 2description of the app', 'io22.png'),
-    SlideData('This is the 3description of the app', 'io33.png'),
-    SlideData('This is the 3description of the app', 'io44.png'),
-    SlideData('This is the 3description of the app', 'io55.png'),
-    SlideData('This is the 3description of the app', 'io66.png'),
-    SlideData('This is the 3description of the app', 'io77.png'),
+        'p1.png'),
+    SlideData('This is the 2description of the app', 'p2222.png'),
+    SlideData('This is the 3description of the app', 'p3333.png'),
+    SlideData('This is the 3description of the app', 'p4444.png'),
+    SlideData('This is the 3description of the app', 'p88888888.png'),
+    SlideData('This is the 3description of the app', 'p5555.png'),
+    SlideData('This is the 3description of the app', 'p6666.png.png'),
+    SlideData('This is the 3description of the app', 'p7777.png')
   ];
 
   @override

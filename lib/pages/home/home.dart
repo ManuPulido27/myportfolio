@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/header_item.dart';
+import 'package:portfolio/pages/home/components/androidimer.dart';
 import 'package:portfolio/pages/home/components/carousel.dart';
+import 'package:portfolio/pages/home/components/charge.dart';
 import 'package:portfolio/pages/home/components/cv_section.dart';
 import 'package:portfolio/pages/home/components/education_section.dart';
 import 'package:portfolio/pages/home/components/footer.dart';
 
 import 'package:portfolio/pages/home/components/ios_app_ad.dart';
+import 'package:portfolio/pages/home/components/politic.dart';
 import 'package:portfolio/pages/home/components/portfolio_stats.dart';
 import 'package:portfolio/pages/home/components/skill_section.dart';
 import 'package:portfolio/pages/home/components/skills2.dart';
@@ -36,15 +39,15 @@ class _HomeState extends State<Home> {
     SizedBox(
       height: 20.0,
     ),
-    IosAppAd(),
+    Politic(),
     SizedBox(
       height: 70.0,
     ),
-    IosAppAd(),
+    Charge(),
     SizedBox(
       height: 70.0,
     ),
-    IosAppAd(),
+    AndroidImercita(),
     SizedBox(
       height: 70.0,
     ),
@@ -264,7 +267,7 @@ class _HomeState extends State<Home> {
         index: 0,
         isButton: true),
     HeaderItem(title: "PORTFOLIO", onTap: () {}, index: 2, isButton: true),
-    HeaderItem(title: "ABOUT ME", onTap: () {}, index: 2, isButton: true),
+    HeaderItem(title: "ABOUT ME", onTap: () {}, index: 10, isButton: true),
     HeaderItem(title: "REFERENCES", onTap: () {}, index: 18, isButton: true),
     HeaderItem(title: "CONTACT", onTap: () {}, index: 19, isButton: true),
   ];

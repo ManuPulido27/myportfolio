@@ -42,22 +42,6 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     animationFunc();
-
-    /*controller2 = new AnimationController(
-      vsync: this,
-      duration: new Duration(milliseconds: 5000),
-    );
-
-    controller2.forward();
-    controller2.addListener(() {
-      setState(() {
-        if (controller2.status == AnimationStatus.completed) {
-          controller.repeat();
-        } else if (controller2.status == AnimationStatus.dismissed) {
-          controller.forward();
-        }
-      });
-    });*/
   }
 
   @override

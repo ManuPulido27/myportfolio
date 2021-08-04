@@ -11,14 +11,14 @@ final List<Testimonial> testimonials = [
         '\'\'Manuel is a very fast learner. He knows how to solve problems and take the projects forward under stress. Whenever he reached a roadblock on the development of imercita, he did not stop until he found a solution for it. This proactive attitude makes him a valuable asset to any small team. He is a good communicator, thinks on his feet and clarifies the issues ot his team members. He was fast in UX implementation on all device sizes both on Android and iOS. I look forward to working with him on more upcoming projects.\'\'',
     occupation: "CEO - Imercita",
     personName: "Sharzad Behzadian",
-    profilePhoto: "assets/female.png",
+    profilePhoto: "assets/1024.png",
   ),
   Testimonial(
     text:
         '\'\'Manuel worked with us when we were considering to migrate our app to Flutter, he created a new user interface following our specifications in no time, and also contributing with his ideas. If we decide to go all the way with Flutter, we will definitely contact him again due to his work ethic, comunication and design skills.\'\'',
     occupation: "Co-Founder - ChargeSurfing",
     personName: "Sergio Almeida",
-    profilePhoto: "assets/male.png",
+    profilePhoto: "assets/Chargelogo.jpg",
   )
 ];
 
@@ -99,11 +99,12 @@ Widget _buildUi(double width) {
                           ),
                           Row(
                             children: [
-                              CircleAvatar(
-                                radius: 25.0,
-                                backgroundColor: Colors.transparent,
-                                backgroundImage: AssetImage(
-                                  testimonial.profilePhoto,
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Container(
+                                  color: Colors.white,
+                                  height: 50,
+                                  child: Image.asset(testimonial.profilePhoto),
                                 ),
                               ),
                               SizedBox(

@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/slidedata.dart';
 import 'package:portfolio/pages/home/components/portslider.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
 
-class IosAppAd extends StatefulWidget {
+class AndroidImercita extends StatefulWidget {
   @override
-  _IosAppAdState createState() => _IosAppAdState();
+  _AndroidImercitaState createState() => _AndroidImercitaState();
 }
 
-class _IosAppAdState extends State<IosAppAd> {
+class _AndroidImercitaState extends State<AndroidImercita> {
   List<SlideData> list = [
     SlideData(
         'This is the 1description of the appgggggggggsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdgggjujujujujuujujujujujujujujujujujujujujuju',
-        'io11.png'),
-    SlideData('This is the 2description of the app', 'io22.png'),
-    SlideData('This is the 3description of the app', 'io33.png'),
-    SlideData('This is the 3description of the app', 'io44.png'),
-    SlideData('This is the 3description of the app', 'io55.png'),
-    SlideData('This is the 3description of the app', 'io66.png'),
-    SlideData('This is the 3description of the app', 'io77.png'),
+        'p1.png'),
+    SlideData('This is the 2description of the app', 'screen2.png'),
+    SlideData('This is the 3description of the app', 'screen3.png')
   ];
 
   @override

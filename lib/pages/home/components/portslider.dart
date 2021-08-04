@@ -92,16 +92,15 @@ class _PortSliderState extends State<PortSlider> {
                   ? widget.slides.map((url) {
                       int index = widget.slides.indexOf(url);
                       return Container(
-                        width: width * 0.05,
+                        width: width * 0.025,
                         height: height * 0.011,
                         margin: EdgeInsets.symmetric(
                             vertical: height * 0.01, horizontal: width * 0.001),
                         decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: _current == index
-                              ? Colors.purple
-                              : Colors.purple.shade200,
-                        ),
+                            shape: BoxShape.circle,
+                            color: _current == index
+                                ? Colors.blue
+                                : Colors.white70),
                       );
                     }).toList()
                   : widget.slides.map((url) {
