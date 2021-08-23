@@ -14,13 +14,13 @@ class IosAppAd extends StatefulWidget {
 
 class _IosAppAdState extends State<IosAppAd> {
   List<SlideData> list = [
-    SlideData('', 'io11.png'),
-    SlideData('', 'io222.png'),
-    SlideData('', 'io33333.png'),
-    SlideData('', 'io444.png'),
-    SlideData('', 'io555.png'),
-    SlideData('', 'io7777.png'),
-    SlideData('', 'io8888.png'),
+    SlideData('', 'io11.png', Colors.purple),
+    SlideData('', 'io222.png', Colors.purple),
+    SlideData('', 'io33333.png', Colors.purple),
+    SlideData('', 'io444.png', Colors.purple),
+    SlideData('', 'io555.png', Colors.purple),
+    SlideData('', 'io7777.png', Colors.purple),
+    SlideData('', 'io8888.png', Colors.purple),
   ];
 
   @override

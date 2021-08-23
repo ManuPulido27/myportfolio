@@ -99,7 +99,7 @@ class _PortSliderState extends State<PortSlider> {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: _current == index
-                                ? Colors.blue
+                                ? widget.slides[index].color
                                 : Colors.white70),
                       );
                     }).toList()

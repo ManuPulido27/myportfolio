@@ -196,7 +196,7 @@ Widget textWidget() {
         SizedBox(
           height: 25.0,
         ),
-        Row(
+        /* Row(
           children: [
             GestureDetector(
               onTap: () {},
@@ -254,7 +254,7 @@ Widget textWidget() {
                   )),
             ),
           ],
-        ),
+        ),*/
       ],
     ),
   );

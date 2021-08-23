@@ -46,7 +46,7 @@ List<CarouselItemModel> carouselItems = List.generate(
                   height: 30.0,
                 ),
                 Text(
-                  "JR. Flutter developer, based in Milano",
+                  "Jr. Flutter developer, based in Milano",
                   style: TextStyle(
                     color: kCaptionColor,
                     fontSize: 20.0,

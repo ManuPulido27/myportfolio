@@ -16,17 +16,17 @@ final List<FooterItem> footerItems = [
   FooterItem(
       iconPath: "assets/w.png",
       title: "WHATSAPP",
-      text1: "+93 721 7187",
+      text1: "+39 379 279 6129",
       linkName: ''),
   FooterItem(
       iconPath: "assets/linkedin.png",
       title: "LinkedIn",
-      text1: "",
+      text1: "Click here to see my profile",
       linkName: ''),
   FooterItem(
       iconPath: "assets/github-sign.png",
-      title: "GITHUB",
-      text1: "",
+      title: "GitHub",
+      text1: "Check it out!",
       linkName: ''),
 ];
 
@@ -79,72 +79,87 @@ Widget _buildUi(double width, BuildContext context) {
                   runSpacing: 20.0,
                   children: footerItems
                       .map(
-                        (footerItem) => Container(
-                          height: 120.0,
-                          width: ScreenHelper.isMobile(context)
-                              ? constraints.maxWidth / 2.0 - 20.0
-                              : constraints.maxWidth / 4.0 - 20.0,
-                          child: GestureDetector(
-                            onTap: () async {
-                              var url = footerItem.linkName;
+                        (footerItem) => ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Container(
+                            color: Colors.white70,
+                            height: 160.0,
+                            width: ScreenHelper.isMobile(context)
+                                ? constraints.maxWidth / 2.0 - 20.0
+                                : constraints.maxWidth / 4.0 - 20.0,
+                            child: GestureDetector(
+                              onTap: () async {
+                                var url = footerItem.linkName;
 
-                              await launch(
-                                url,
-                                universalLinksOnly: true,
-                              );
-                            },
-                            child: MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Container(
-                                            height: 50,
-                                            color: Colors.transparent,
-                                            child: Image.asset(
-                                              footerItem.iconPath,
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 15.0,
-                                        ),
-                                        Text(
-                                          footerItem.title,
-                                          style: GoogleFonts.oswald(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w700,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 15.0,
-                                    ),
-                                    RichText(
-                                      textAlign: TextAlign.start,
-                                      text: TextSpan(
+                                await launch(
+                                  url,
+                                  universalLinksOnly: true,
+                                );
+                              },
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                    child: Container(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          TextSpan(
-                                            text: "${footerItem.text1}\n",
-                                            style: TextStyle(
-                                              color: kCaptionColor,
-                                              height: 1.8,
-                                            ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                child: Container(
+                                                  height: 50,
+                                                  color: footerItem.title ==
+                                                              'LinkedIn' ||
+                                                          footerItem.title ==
+                                                              'GitHub'
+                                                      ? Colors.white
+                                                      : Colors.transparent,
+                                                  child: Image.asset(
+                                                    footerItem.iconPath,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 15.0,
+                                              ),
+                                              Text(
+                                                footerItem.title,
+                                                style: GoogleFonts.oswald(
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: Colors.blue,
+                                                ),
+                                              ),
+                                            ],
                                           ),
+                                          SizedBox(
+                                            height: 15.0,
+                                          ),
+                                          RichText(
+                                            textAlign: TextAlign.start,
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: "${footerItem.text1}\n",
+                                                  style: TextStyle(
+                                                    color: kCaptionColor,
+                                                    height: 1.8,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
                                         ],
                                       ),
-                                    )
-                                  ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -182,7 +197,7 @@ Widget _buildUi(double width, BuildContext context) {
                         child: MouseRegion(
                           cursor: SystemMouseCursors.click,
                           child: Text(
-                            "Built entirely using Flutter",
+                            "Built entirely using Flutter \u{1F4AA}",
                             style: TextStyle(
                               color: kCaptionColor,
                             ),

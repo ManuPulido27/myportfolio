@@ -13,12 +13,12 @@ class AndroidImercita extends StatefulWidget {
 
 class _AndroidImercitaState extends State<AndroidImercita> {
   List<SlideData> list = [
-    SlideData('', 'dr1.png'),
-    SlideData('', 'dr2.png'),
-    SlideData('', 'dr3.png'),
-    SlideData('', 'dr4.png'),
-    SlideData('', 'dr5.png'),
-    SlideData('', 'dr6.png'),
+    SlideData('', 'dr1.png', Colors.purple),
+    SlideData('', 'dr2.png', Colors.purple),
+    SlideData('', 'dr3.png', Colors.purple),
+    SlideData('', 'dr4.png', Colors.purple),
+    SlideData('', 'dr5.png', Colors.purple),
+    SlideData('', 'dr6.png', Colors.purple),
   ];
 
   @override

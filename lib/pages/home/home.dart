@@ -36,48 +36,50 @@ class _HomeState extends State<Home> {
       ItemPositionsListener.create();
 
   List<Widget> widgetlist = [
-    Carousel(),
+    Container(child: Carousel()),
     SizedBox(
       height: 20.0,
     ),
-    Portfolio(),
-    Politic(),
+    Container(child: Portfolio()),
+    Container(child: Politic()),
     SizedBox(
       height: 70.0,
     ),
-    Charge(),
+    Container(child: Charge()),
     SizedBox(
       height: 70.0,
     ),
-    AndroidImercita(),
+    Container(child: AndroidImercita()),
     SizedBox(
       height: 70.0,
     ),
-    IosAppAd(),
+    Container(child: IosAppAd()),
     SizedBox(
       height: 70.0,
     ),
-    Padding(
-      padding: const EdgeInsets.symmetric(vertical: 28.0),
-      child: PortfolioStats(),
+    Container(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 28.0),
+        child: PortfolioStats(),
+      ),
     ),
     SizedBox(
       height: 50.0,
     ),
-    EducationSection(),
+    Container(child: EducationSection()),
     SizedBox(
       height: 50.0,
     ),
-    SkillsTwo(),
+    Container(child: SkillsTwo()),
     SizedBox(
       height: 70,
     ),
-    SkillSection(),
+    Container(child: SkillSection()),
     SizedBox(
       height: 50.0,
     ),
-    TestimonialWidget(),
-    Footer(),
+    Container(child: TestimonialWidget()),
+    Container(child: Footer()),
   ];
 
   @override
@@ -166,12 +168,13 @@ class _HomeState extends State<Home> {
                 height: height,
                 child: Container(
                   decoration: BoxDecoration(
-                    //gradient:
-                    //LinearGradient(colors: [Colors.blue, Colors.white70]),
-                    color: Colors.blueGrey.shade300,
-                    backgroundBlendMode: BlendMode.srcOver,
+                    gradient:
+                        LinearGradient(colors: [Colors.blue, Colors.lightBlue]),
+                    // color: Colors.blueGrey.shade300,
+                    // backgroundBlendMode: BlendMode.srcOver,
                   ),
                   child: ScrollablePositionedList.builder(
+                    addAutomaticKeepAlives: true,
                     scrollDirection: Axis.vertical,
                     itemScrollController: itemScrollController,
                     itemCount: widgetlist.length,
