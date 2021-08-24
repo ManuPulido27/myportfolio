@@ -30,10 +30,36 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with TickerProviderStateMixin {
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener =
       ItemPositionsListener.create();
+
+  late final ScrollController scrollController;
+
+  @override
+  void initState() {
+    scrollController = ScrollController(
+      initialScrollOffset: 0.0,
+      keepScrollOffset: true,
+    );
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose(); // dispose the controller
+    super.dispose();
+  }
+
+  void scrollTo(double offset) {
+    scrollController.animateTo(
+      offset,
+      duration: Duration(seconds: 2),
+      curve: Curves.linear,
+    );
+  }
 
   List<Widget> widgetlist = [
     Container(child: Carousel()),
@@ -101,7 +127,7 @@ class _HomeState extends State<Home> {
                         cursor: SystemMouseCursors.click,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.blue,
+                            color: Colors.red,
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                           padding: EdgeInsets.symmetric(horizontal: 28.0),
@@ -160,27 +186,60 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                /* decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
-                  Colors.blue,
-                  Colors.white70,
-                ])),*/
                 height: height,
                 child: Container(
                   decoration: BoxDecoration(
                     gradient:
-                        LinearGradient(colors: [Colors.blue, Colors.lightBlue]),
-                    // color: Colors.blueGrey.shade300,
-                    // backgroundBlendMode: BlendMode.srcOver,
+                        LinearGradient(colors: [Colors.black26, Colors.black]),
                   ),
-                  child: ScrollablePositionedList.builder(
-                    addAutomaticKeepAlives: true,
-                    scrollDirection: Axis.vertical,
-                    itemScrollController: itemScrollController,
-                    itemCount: widgetlist.length,
-                    itemBuilder: (context, index) {
-                      return Container(child: widgetlist[index]);
-                    },
+                  child: SingleChildScrollView(
+                    controller: scrollController,
+                    child: Column(children: [
+                      Container(child: Carousel()),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(child: Portfolio()),
+                      Container(child: Politic()),
+                      SizedBox(
+                        height: 70.0,
+                      ),
+                      Container(child: Charge()),
+                      SizedBox(
+                        height: 70.0,
+                      ),
+                      Container(child: AndroidImercita()),
+                      SizedBox(
+                        height: 70.0,
+                      ),
+                      Container(child: IosAppAd()),
+                      SizedBox(
+                        height: 70.0,
+                      ),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 28.0),
+                          child: PortfolioStats(),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50.0,
+                      ),
+                      Container(child: EducationSection()),
+                      SizedBox(
+                        height: 50.0,
+                      ),
+                      Container(child: SkillsTwo()),
+                      SizedBox(
+                        height: 70,
+                      ),
+                      Container(child: SkillSection()),
+                      SizedBox(
+                        height: 50.0,
+                      ),
+                      Container(child: TestimonialWidget()),
+                      Container(child: Footer()),
+                    ]),
                   ),
                 ),
               )
@@ -265,16 +324,31 @@ class _HomeState extends State<Home> {
 
   List<HeaderItem> headerItems = [
     HeaderItem(
-        title: "HOME",
-        onTap: () {
-          print('');
-        },
-        index: 0,
-        isButton: true),
-    HeaderItem(title: "PORTFOLIO", onTap: () {}, index: 2, isButton: true),
-    HeaderItem(title: "ABOUT ME", onTap: () {}, index: 10, isButton: true),
-    HeaderItem(title: "REFERENCES", onTap: () {}, index: 18, isButton: true),
-    HeaderItem(title: "CONTACT", onTap: () {}, index: 19, isButton: true),
+        title: "HOME", onTap: () {}, index: 0, isButton: true, offset: 0.0),
+    HeaderItem(
+        title: "PORTFOLIO",
+        onTap: () {},
+        index: 2,
+        isButton: true,
+        offset: 620.0),
+    HeaderItem(
+        title: "ABOUT ME",
+        onTap: () {},
+        index: 10,
+        isButton: true,
+        offset: 0.5),
+    HeaderItem(
+        title: "REFERENCES",
+        onTap: () {},
+        index: 18,
+        isButton: true,
+        offset: 0.2),
+    HeaderItem(
+        title: "CONTACT",
+        onTap: () {},
+        index: 21,
+        isButton: true,
+        offset: 11000.0),
   ];
 
   Widget headerLogo() {
@@ -349,10 +423,7 @@ class _HomeState extends State<Home> {
                             horizontal: 20.0, vertical: 5.0),
                         child: TextButton(
                           onPressed: () {
-                            itemScrollController.scrollTo(
-                                index: item.index,
-                                duration: Duration(seconds: 2),
-                                curve: Curves.easeInOutCubic);
+                            scrollTo(item.offset);
                           },
                           child: Text(
                             item.title,

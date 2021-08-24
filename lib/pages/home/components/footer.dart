@@ -10,12 +10,12 @@ import 'package:url_launcher/url_launcher.dart';
 final List<FooterItem> footerItems = [
   FooterItem(
       iconPath: "assets/gmail.png",
-      title: "EMAIL",
+      title: "Email",
       text1: "manupulido98@gmail.com",
       linkName: ''),
   FooterItem(
       iconPath: "assets/w.png",
-      title: "WHATSAPP",
+      title: "WhatsApp",
       text1: "+39 379 279 6129",
       linkName: ''),
   FooterItem(
@@ -134,7 +134,7 @@ Widget _buildUi(double width, BuildContext context) {
                                                 style: GoogleFonts.oswald(
                                                   fontSize: 18.0,
                                                   fontWeight: FontWeight.w700,
-                                                  color: Colors.blue,
+                                                  color: Colors.black,
                                                 ),
                                               ),
                                             ],
@@ -185,7 +185,7 @@ Widget _buildUi(double width, BuildContext context) {
                     child: Text(
                       "Copyright (c) 2021 Manuel Pulido. All rights Reserved",
                       style: TextStyle(
-                        color: kCaptionColor,
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -199,7 +199,7 @@ Widget _buildUi(double width, BuildContext context) {
                           child: Text(
                             "Built entirely using Flutter \u{1F4AA}",
                             style: TextStyle(
-                              color: kCaptionColor,
+                              color: Colors.white,
                             ),
                           ),
                         ),

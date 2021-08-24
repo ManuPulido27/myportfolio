@@ -21,6 +21,12 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   late Animation<double> animation2;
   late AnimationController controller2;
 
+  tForward() {
+    if (mounted) {
+      controller.forward();
+    }
+  }
+
   animationFunc() async {
     controller =
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
@@ -30,12 +36,11 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
           Future.delayed(Duration(seconds: 3))
               .then((value) => controller.reverse());
         } else if (status == AnimationStatus.dismissed) {
-          Future.delayed(Duration(seconds: 3))
-              .then((value) => controller.forward());
+          Future.delayed(Duration(seconds: 3)).then((value) => tForward());
         }
       });
     Future.delayed(Duration(seconds: 3));
-    controller.forward();
+    tForward();
   }
 
   @override
@@ -161,7 +166,7 @@ Widget textWidget() {
           height: 30.0,
         ),
         Text(
-          "JR. Flutter developer, based in Milano",
+          "Jr. Flutter developer, based in Milano",
           style: TextStyle(
             color: kCaptionColor,
             fontSize: 20.0,

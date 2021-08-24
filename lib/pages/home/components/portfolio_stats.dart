@@ -24,6 +24,12 @@ class _PortfolioStatsState extends State<PortfolioStats>
   late Animation<double> animation;
   late AnimationController controller;
 
+  tForward() {
+    if (mounted) {
+      controller.forward();
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -35,8 +41,7 @@ class _PortfolioStatsState extends State<PortfolioStats>
           Future.delayed(Duration(seconds: 0))
               .then((value) => controller.reverse());
         } else if (status == AnimationStatus.dismissed) {
-          Future.delayed(Duration(seconds: 2))
-              .then((value) => controller.forward());
+          Future.delayed(Duration(seconds: 2)).then((value) => tForward());
         }
       });
     Future.delayed(Duration(seconds: 2)).then((value) => controller.forward());
@@ -89,34 +94,38 @@ class _PortfolioStatsState extends State<PortfolioStats>
                     spacing: 20.0,
                     runSpacing: 20.0,
                     children: stats.map((stat) {
-                      return Container(
-                        padding: EdgeInsets.symmetric(vertical: 15.0),
-                        // Just use the helper here really
-                        width: ScreenHelper.isMobile(context)
-                            ? constraint.maxWidth / 2.0 - 20
-                            : (constraint.maxWidth / 4.0 - 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              stat.count,
-                              style: GoogleFonts.oswald(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 32.0,
-                                color: Colors.white,
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 15.0),
+                          // Just use the helper here really
+                          width: ScreenHelper.isMobile(context)
+                              ? constraint.maxWidth / 2.0 - 20
+                              : (constraint.maxWidth / 4.0 - 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                stat.count,
+                                style: GoogleFonts.oswald(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 32.0,
+                                  color: Colors.blue,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            Text(
-                              stat.text,
-                              style: TextStyle(
-                                fontSize: 16.0,
-                                color: kCaptionColor,
+                              SizedBox(
+                                width: 10.0,
                               ),
-                            )
-                          ],
+                              Text(
+                                stat.text,
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: kCaptionColor,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     }).toList(),
@@ -356,40 +365,6 @@ class _PortfolioStatsState extends State<PortfolioStats>
                                     padding: const EdgeInsets.all(8.0),
                                     child: AutoSizeText(
                                       'Strong Communication skills, active listener',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 50,
-                                child: AnimateedLogo(
-                                  animation: animation,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Insatiable learner, curious by nature',
                                       style: GoogleFonts.oswald(
                                         fontSize: width * 0.025,
                                         color: Colors.black,

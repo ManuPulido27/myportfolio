@@ -35,6 +35,11 @@ class LogoApp extends StatefulWidget {
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
+  tForward() {
+    if (mounted) {
+      controller.forward();
+    }
+  }
 
   @override
   void initState() {
@@ -46,10 +51,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
         if (status == AnimationStatus.completed) {
           controller.reverse();
         } else if (status == AnimationStatus.dismissed) {
-          controller.forward();
+          tForward();
         }
       });
-    controller.forward();
+    tForward();
   }
 
   @override
