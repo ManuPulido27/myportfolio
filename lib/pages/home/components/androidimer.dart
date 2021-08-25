@@ -12,6 +12,7 @@ class AndroidImercita extends StatefulWidget {
 }
 
 class _AndroidImercitaState extends State<AndroidImercita> {
+  GlobalKey llave = GlobalKey();
   List<SlideData> list = [
     SlideData('', 'dr1.png', Colors.purple),
     SlideData('', 'dr2.png', Colors.purple),

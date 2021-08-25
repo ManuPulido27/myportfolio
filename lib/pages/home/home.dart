@@ -31,9 +31,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with TickerProviderStateMixin {
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener =
-      ItemPositionsListener.create();
+  late GlobalKey homekey = GlobalKey();
+  late GlobalKey portkey = GlobalKey();
+  late GlobalKey abkey = GlobalKey();
+  late GlobalKey refkey = GlobalKey();
+  late GlobalKey conkey = GlobalKey();
 
   late final ScrollController scrollController;
 
@@ -59,6 +61,34 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       duration: Duration(seconds: 2),
       curve: Curves.linear,
     );
+  }
+
+  var theOffset;
+  late double _y = 0.0;
+
+  _getPositions(GlobalKey gpglobalKey) {
+    final RenderBox? renderBoxRed =
+        gpglobalKey.currentContext!.findRenderObject() as RenderBox?;
+
+    final position = renderBoxRed!.localToGlobal(Offset.zero);
+    print("theoffset distance is: ${position.distance} ");
+    setState(() {
+      _y = position.dy;
+      /* if (_y < 0) {
+        _y = _y * -1;
+      } else {
+        _y = _y;
+      }*/
+      //_y = -_y;
+    });
+    print(_y);
+  }
+
+  locateAndScroll(GlobalKey globalKey) {
+    print('esto fuciona');
+    print('global key es' + globalKey.toString());
+    _getPositions(globalKey);
+    scrollTo(_y);
   }
 
   List<Widget> widgetlist = [
@@ -115,56 +145,159 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       key: Globals.scaffoldKey,
       endDrawer: Drawer(
         child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 24.0,
-            ),
-            child: ListView.separated(
-              itemBuilder: (BuildContext context, int index) {
-                return headerItems[index].isButton
-                    ? MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          padding: EdgeInsets.symmetric(horizontal: 28.0),
-                          child: TextButton(
-                            onPressed: () {
-                              itemScrollController.scrollTo(
-                                  index: headerItems[index].index,
-                                  duration: Duration(seconds: 2),
-                                  curve: Curves.easeInOutCubic);
-                            },
-                            child: Text(
-                              headerItems[index].title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 13.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    : ListTile(
-                        title: Text(
-                          headerItems[index].title,
+          child: ListView(
+            children: [
+              Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 24.0,
+                  ),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 28.0),
+                      child: TextButton(
+                        onPressed: () {
+                          locateAndScroll(homekey);
+
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          headerItems[0].title,
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      );
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(
-                  height: 10.0,
-                );
-              },
-              itemCount: headerItems.length,
-            ),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 24.0,
+                  ),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 28.0),
+                      child: TextButton(
+                        onPressed: () {
+                          locateAndScroll(portkey);
+
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          headerItems[1].title,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 24.0,
+                  ),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 28.0),
+                      child: TextButton(
+                        onPressed: () {
+                          locateAndScroll(abkey);
+
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          headerItems[2].title,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 24.0,
+                  ),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 28.0),
+                      child: TextButton(
+                        onPressed: () {
+                          locateAndScroll(refkey);
+
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          headerItems[3].title,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
+              Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 24.0,
+                  ),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      padding: EdgeInsets.symmetric(horizontal: 28.0),
+                      child: TextButton(
+                        onPressed: () {
+                          locateAndScroll(conkey);
+
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          headerItems[4].title,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
+            ],
           ),
         ),
       ),
@@ -195,11 +328,12 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   child: SingleChildScrollView(
                     controller: scrollController,
                     child: Column(children: [
-                      Container(child: Carousel()),
+                      Container(
+                          key: homekey, color: Colors.red, child: Carousel()),
                       SizedBox(
                         height: 20.0,
                       ),
-                      Container(child: Portfolio()),
+                      Container(key: portkey, child: Portfolio()),
                       Container(child: Politic()),
                       SizedBox(
                         height: 70.0,
@@ -217,6 +351,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                         height: 70.0,
                       ),
                       Container(
+                        key: abkey,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 28.0),
                           child: PortfolioStats(),
@@ -237,43 +372,12 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                       SizedBox(
                         height: 50.0,
                       ),
-                      Container(child: TestimonialWidget()),
-                      Container(child: Footer()),
+                      Container(key: refkey, child: TestimonialWidget()),
+                      Container(key: conkey, child: Footer()),
                     ]),
                   ),
                 ),
               )
-              /* Carousel(),
-              SizedBox(
-                height: 20.0,
-              ),
-              CvSection(),
-              IosAppAd(),
-              SizedBox(
-                height: 70.0,
-              ),
-              WebsiteAd(),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 28.0),
-                child: PortfolioStats(),
-              ),
-              SizedBox(
-                height: 50.0,
-              ),
-              EducationSection(),
-              SizedBox(
-                height: 50.0,
-              ),
-              SkillSection(),
-              SizedBox(
-                height: 50.0,
-              ),
-              Sponsors(),
-              SizedBox(
-                height: 50.0,
-              ),
-              TestimonialWidget(),
-              Footer(),*/
             ],
           ),
         ),
@@ -324,31 +428,35 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
 
   List<HeaderItem> headerItems = [
     HeaderItem(
-        title: "HOME", onTap: () {}, index: 0, isButton: true, offset: 0.0),
+      title: "HOME",
+      onTap: () {},
+      index: 0,
+      isButton: true,
+    ),
     HeaderItem(
-        title: "PORTFOLIO",
-        onTap: () {},
-        index: 2,
-        isButton: true,
-        offset: 620.0),
+      title: "PORTFOLIO",
+      onTap: () {},
+      index: 2,
+      isButton: true,
+    ),
     HeaderItem(
-        title: "ABOUT ME",
-        onTap: () {},
-        index: 10,
-        isButton: true,
-        offset: 0.5),
+      title: "ABOUT ME",
+      onTap: () {},
+      index: 10,
+      isButton: true,
+    ),
     HeaderItem(
-        title: "REFERENCES",
-        onTap: () {},
-        index: 18,
-        isButton: true,
-        offset: 0.2),
+      title: "REFERENCES",
+      onTap: () {},
+      index: 18,
+      isButton: true,
+    ),
     HeaderItem(
-        title: "CONTACT",
-        onTap: () {},
-        index: 21,
-        isButton: true,
-        offset: 11000.0),
+      title: "CONTACT",
+      onTap: () {},
+      index: 21,
+      isButton: true,
+    ),
   ];
 
   Widget headerLogo() {
@@ -422,9 +530,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                         padding: EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 5.0),
                         child: TextButton(
-                          onPressed: () {
-                            scrollTo(item.offset);
-                          },
+                          onPressed: () {},
                           child: Text(
                             item.title,
                             style: TextStyle(

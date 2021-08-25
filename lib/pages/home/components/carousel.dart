@@ -165,37 +165,50 @@ Widget textWidget() {
         SizedBox(
           height: 30.0,
         ),
-        Text(
-          "Jr. Flutter developer, based in Milano",
-          style: TextStyle(
-            color: kCaptionColor,
-            fontSize: 20.0,
-            height: 1.0,
-          ),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Container(
-          child: Wrap(
-            children: [
-              Text(
-                "Experience working on freelance and startup contexts",
-                style: TextStyle(
-                  color: kCaptionColor,
-                  fontSize: 17.0,
-                  height: 1.5,
-                ),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: Container(
+            color: Colors.white70,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(
+                    "Jr. Flutter developer",
+                    style: TextStyle(
+                      color: kCaptionColor,
+                      fontSize: 20.0,
+                      height: 1.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                    child: Wrap(
+                      children: [
+                        Text(
+                          "Experience working on freelance and startup contexts",
+                          style: TextStyle(
+                            color: kCaptionColor,
+                            fontSize: 17.0,
+                            height: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Text(
+                    "Economics student",
+                    style: TextStyle(
+                      color: kCaptionColor,
+                      fontSize: 17.0,
+                      height: 1.0,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        Text(
-          "Economics student",
-          style: TextStyle(
-            color: kCaptionColor,
-            fontSize: 17.0,
-            height: 1.0,
+            ),
           ),
         ),
         SizedBox(
