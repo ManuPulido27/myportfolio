@@ -127,7 +127,7 @@ class _AndroidImercitaState extends State<AndroidImercita> {
                                   height: 10.0,
                                 ),
                                 Text(
-                                  "This is was my first flutter project. It is an app with the objective to inform people about basic politc related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph",
+                                  'This is the first app I ever published. It was a great experience being part of a company like Immersive City Tales, as I gained a lot of knowledge while developing and deploying by myself both iOS and Android versions of their app which was only available for iOS at the time. These images correspond to the Android version.',
                                   style: TextStyle(
                                     color: Colors.white,
                                     height: 1.5,

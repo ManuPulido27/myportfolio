@@ -127,7 +127,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                   height: 10.0,
                                 ),
                                 Text(
-                                  "This is was my first flutter project. It is an app with the objective to inform people about basic politc related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph",
+                                  'Imercita is an app that turns city exploration into an immersive experience. Through stories, it leads you to discover new places and meet people while interacting with your environment by using GeoLocation-driven data to guide you. It was great using flutter to develop it, as 85% of the code-base was reusable for this iOS version, which is also available in the App Store.',
                                   style: TextStyle(
                                     color: Colors.white,
                                     height: 1.5,

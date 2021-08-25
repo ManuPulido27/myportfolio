@@ -21,13 +21,14 @@ final List<FooterItem> footerItems = [
   FooterItem(
       iconPath: "assets/linkedin.png",
       title: "LinkedIn",
-      text1: "Click here to see my profile",
-      linkName: ''),
+      text1: "Click here to see my profile!",
+      linkName:
+          'https://www.linkedin.com/in/manuel-ignacio-pulido-garc%C3%ADa-7b274a1b7/'),
   FooterItem(
       iconPath: "assets/github-sign.png",
       title: "GitHub",
-      text1: "Check it out!",
-      linkName: ''),
+      text1: "Click here to check it out!",
+      linkName: 'https://github.com/ManuPulido27'),
 ];
 
 class Footer extends StatelessWidget {

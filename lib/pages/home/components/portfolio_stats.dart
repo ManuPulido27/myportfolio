@@ -262,7 +262,7 @@ class _PortfolioStatsState extends State<PortfolioStats>
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: AutoSizeText(
-                                      'Experience working with Geofences and Location-driven data',
+                                      'Experience working with GeoLocation-driven data',
                                       style: GoogleFonts.oswald(
                                         fontSize: width * 0.025,
                                         color: Colors.black,
@@ -296,7 +296,7 @@ class _PortfolioStatsState extends State<PortfolioStats>
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: AutoSizeText(
-                                      'Experience with the distribution and publishing process to both\n App Store and Play Store',
+                                      'Distribution and publishing process to both\n App Store and Play Store',
                                       style: GoogleFonts.oswald(
                                         fontSize: width * 0.025,
                                         color: Colors.black,

@@ -143,7 +143,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: Globals.scaffoldKey,
-      endDrawer: Drawer(
+      /* endDrawer: Drawer(
         child: SafeArea(
           child: ListView(
             children: [
@@ -300,7 +300,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ],
           ),
         ),
-      ),
+      ),*/
       body: Container(
         child: SingleChildScrollView(
           child: Column(
@@ -328,8 +328,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   child: SingleChildScrollView(
                     controller: scrollController,
                     child: Column(children: [
-                      Container(
-                          key: homekey, color: Colors.red, child: Carousel()),
+                      Container(key: homekey, child: Carousel()),
                       SizedBox(
                         height: 20.0,
                       ),
@@ -400,11 +399,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                 // Lets open drawer using global key
                 Globals.scaffoldKey.currentState!.openEndDrawer();
               },
-              child: Icon(
-                Icons.menu,
-                color: Colors.blue,
-                size: 28.0,
-              ),
+              child: FlutterLogo(),
             )
           ],
         ),
@@ -420,7 +415,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           headerLogo(),
-          headerRow(),
+          // headerRow(),
         ],
       ),
     );

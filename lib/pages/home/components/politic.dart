@@ -114,7 +114,7 @@ class _PoliticState extends State<Politic> {
                                         height: 10.0,
                                       ),
                                       Text(
-                                        "This is was my first flutter project. It is an app with the objective to inform people about basic politc related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph",
+                                        "This is was my first Flutter project. It is an app with the objective to inform people about basic politic-related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph.",
                                         style: TextStyle(
                                           color: Colors.white,
                                           height: 1.5,

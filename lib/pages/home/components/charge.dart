@@ -106,7 +106,7 @@ class _ChargeState extends State<Charge> {
                                   height: 10.0,
                                 ),
                                 Text(
-                                  "This is was my first flutter project. It is an app with the objective to inform people about basic politc related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph",
+                                  'This was my first experience working with a startup, I developed a UI prototype for ChargeSurfing, a Portuguese electric mobility company. I followed their instructions to replicate their production app when they were considering switching to Flutter.',
                                   style: TextStyle(
                                     color: Colors.white,
                                     height: 1.5,

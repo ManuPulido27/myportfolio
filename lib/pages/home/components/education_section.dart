@@ -11,7 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 final List<Education> educationList = [
   Education(
       description:
-          "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below",
+          'I have attended this five-years Bachelors Degree in Economics at the National University of Córdoba for three years, before taking the decision to leave Argentina to continue my studies in Italy. In this period I completed several exams as for example, Descriptive and Inferential Statistics, Advanced Multivariate Calculus, Microeconomics, History and more.',
       linkName: "https://www.unc.edu.ar/",
       period: "2017 - 2020",
       photo: "cordo.png",
@@ -19,7 +19,7 @@ final List<Education> educationList = [
       displayLink: 'www.unc.edu.ar'),
   Education(
       description:
-          "This is a sample education and details about it is stated below.This is a sample education and details about it is stated below",
+          "At Uzzi College I have obtained my High School Degree with orientation to Languages. Over the years I've studied English, French and Portuguese on a daily basis there.",
       linkName: "https://www.uzzicollege.edu.ar/",
       period: "2011 - 2016",
       photo: "uzzi.png",
@@ -117,69 +117,74 @@ class EducationSection extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    width: constraints.maxWidth / 2.0 - 20.0,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          education.title,
-                                          style: GoogleFonts.oswald(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 20.0,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        Text(
-                                          education.period,
-                                          style: GoogleFonts.oswald(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 20.0,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5.0,
-                                        ),
-                                        Text(
-                                          education.description,
-                                          maxLines: 4,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                            color: kCaptionColor,
-                                            height: 1.5,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 20.0,
-                                        ),
-                                        MouseRegion(
-                                          cursor: SystemMouseCursors.click,
-                                          child: GestureDetector(
-                                            onTap: () async {
-                                              var url = education.linkName;
-
-                                              await launch(
-                                                url,
-                                                universalLinksOnly: true,
-                                              );
-                                            },
-                                            child: Text(
-                                              education.displayLink,
-                                              style: TextStyle(
-                                                color: Colors.white,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: Container(
+                                      color: Colors.white70,
+                                      width: constraints.maxWidth / 2.0 - 20.0,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              education.title,
+                                              style: GoogleFonts.oswald(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 20.0,
                                               ),
                                             ),
-                                          ),
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+                                            Text(
+                                              education.period,
+                                              style: GoogleFonts.oswald(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 20.0,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 5.0,
+                                            ),
+                                            Text(
+                                              education.description,
+                                              style: TextStyle(
+                                                color: kCaptionColor,
+                                                height: 1.5,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20.0,
+                                            ),
+                                            MouseRegion(
+                                              cursor: SystemMouseCursors.click,
+                                              child: GestureDetector(
+                                                onTap: () async {
+                                                  var url = education.linkName;
+
+                                                  await launch(
+                                                    url,
+                                                    universalLinksOnly: true,
+                                                  );
+                                                },
+                                                child: Text(
+                                                  education.displayLink,
+                                                  style: TextStyle(
+                                                    color: Colors.blue,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 40.0,
+                                            )
+                                          ],
                                         ),
-                                        SizedBox(
-                                          height: 40.0,
-                                        )
-                                      ],
+                                      ),
                                     ),
                                   ),
                                 ),

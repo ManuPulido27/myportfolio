@@ -35,7 +35,7 @@ class _PortSliderState extends State<PortSlider> {
               child: CarouselSlider.builder(
                 options: CarouselOptions(
                     pauseAutoPlayOnTouch: true,
-                    autoPlayInterval: Duration(seconds: 5),
+                    autoPlayInterval: Duration(seconds: 4),
                     autoPlayAnimationDuration: Duration(milliseconds: 700),
                     enableInfiniteScroll: false,
                     height: height * 0.65,
@@ -62,7 +62,7 @@ class _PortSliderState extends State<PortSlider> {
                           child: Image.asset(
                             widget.slides[index].fileName,
                             fit: BoxFit.contain,
-                            height: height * 0.55,
+                            height: height * 0.54,
                           ),
                         ),
                       ),

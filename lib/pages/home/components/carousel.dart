@@ -145,7 +145,7 @@ Widget textWidget() {
           children: [
             CircleAvatar(
               backgroundColor: Colors.white70,
-              radius: 100,
+              radius: 85,
               backgroundImage: AssetImage('circle-cropped.png'),
             ),
             SizedBox(
