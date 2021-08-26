@@ -66,91 +66,66 @@ class _ChargeState extends State<Charge> {
                     ),
                     Expanded(
                       flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.orange.shade900,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        border: Border.all(
-                                            color: Colors.orange.shade900)),
-                                    height: 50,
-                                    width: 50,
-                                    child: Image.asset('assets/Chargelogo.jpg'),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 15.0,
-                                ),
-                                Text(
-                                  "ChargeSurfing UI Prototype",
-                                  style: GoogleFonts.oswald(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w900,
-                                    height: 1.3,
-                                    fontSize: 35.0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                Text(
-                                  'This was my first experience working with a startup, I developed a UI prototype for ChargeSurfing, a Portuguese electric mobility company. I followed their instructions to replicate their production app when they were considering switching to Flutter.',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    height: 1.5,
-                                    fontSize: 15.0,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 25.0,
-                                ),
-                                /* Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    MouseRegion(
-                                      cursor: SystemMouseCursors.click,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(15),
+                        elevation: 25,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.orange.shade900,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Material(
+                                    borderRadius: BorderRadius.circular(10),
+                                    elevation: 20,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          color: kPrimaryColor,
-                                          borderRadius: BorderRadius.circular(8.0),
-                                        ),
-                                        height: 48.0,
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 28.0,
-                                        ),
-                                        child: TextButton(
-                                          onPressed: () {},
-                                          child: Center(
-                                            child: Text(
-                                              "EXPLORE MORE",
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 13.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
+                                            color: Colors.white,
+                                            border: Border.all(
+                                                color: Colors.orange.shade900)),
+                                        height: 50,
+                                        width: 50,
+                                        child: Image.asset(
+                                            'assets/Chargelogo.jpg'),
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 10.0,
+                                  ),
+                                  SizedBox(
+                                    height: 15.0,
+                                  ),
+                                  Text(
+                                    "ChargeSurfing UI Prototype",
+                                    style: GoogleFonts.oswald(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w900,
+                                      height: 1.3,
+                                      fontSize: 35.0,
                                     ),
-                                  ],
-                                )*/
-                              ],
+                                  ),
+                                  SizedBox(
+                                    height: 10.0,
+                                  ),
+                                  Text(
+                                    'This was my first experience working with a startup, I developed a UI prototype for ChargeSurfing, a Portuguese electric mobility company. I followed their instructions to replicate their production app when they were considering switching to Flutter.',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      height: 1.5,
+                                      fontSize: 15.0,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 25.0,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

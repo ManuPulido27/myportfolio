@@ -80,84 +80,102 @@ Widget _buildUi(double width, BuildContext context) {
                   runSpacing: 20.0,
                   children: footerItems
                       .map(
-                        (footerItem) => ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Container(
-                            color: Colors.white70,
-                            height: 160.0,
-                            width: ScreenHelper.isMobile(context)
-                                ? constraints.maxWidth / 2.0 - 20.0
-                                : constraints.maxWidth / 4.0 - 20.0,
-                            child: GestureDetector(
-                              onTap: () async {
-                                var url = footerItem.linkName;
+                        (footerItem) => Material(
+                          borderRadius: BorderRadius.circular(15),
+                          elevation: 20,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Container(
+                              color: Colors.white70,
+                              height: 160.0,
+                              width: ScreenHelper.isMobile(context)
+                                  ? constraints.maxWidth / 2.0 - 20.0
+                                  : constraints.maxWidth / 4.0 - 20.0,
+                              child: GestureDetector(
+                                onTap: () async {
+                                  var url = footerItem.linkName;
 
-                                await launch(
-                                  url,
-                                  universalLinksOnly: true,
-                                );
-                              },
-                              child: MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Center(
-                                    child: Container(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                child: Container(
-                                                  height: 50,
+                                  await launch(
+                                    url,
+                                    universalLinksOnly: true,
+                                  );
+                                },
+                                child: MouseRegion(
+                                  cursor: SystemMouseCursors.click,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(
+                                      child: Container(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Material(
                                                   color: footerItem.title ==
                                                               'LinkedIn' ||
                                                           footerItem.title ==
                                                               'GitHub'
                                                       ? Colors.white
                                                       : Colors.transparent,
-                                                  child: Image.asset(
-                                                    footerItem.iconPath,
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                  elevation: 20,
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    child: Container(
+                                                      height: 50,
+                                                      color: footerItem.title ==
+                                                                  'LinkedIn' ||
+                                                              footerItem
+                                                                      .title ==
+                                                                  'GitHub'
+                                                          ? Colors.white
+                                                          : Colors.transparent,
+                                                      child: Image.asset(
+                                                        footerItem.iconPath,
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                width: 15.0,
-                                              ),
-                                              Text(
-                                                footerItem.title,
-                                                style: GoogleFonts.oswald(
-                                                  fontSize: 18.0,
-                                                  fontWeight: FontWeight.w700,
-                                                  color: Colors.black,
+                                                SizedBox(
+                                                  width: 15.0,
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 15.0,
-                                          ),
-                                          RichText(
-                                            textAlign: TextAlign.start,
-                                            text: TextSpan(
-                                              children: [
-                                                TextSpan(
-                                                  text: "${footerItem.text1}\n",
-                                                  style: TextStyle(
-                                                    color: kCaptionColor,
-                                                    height: 1.8,
+                                                Text(
+                                                  footerItem.title,
+                                                  style: GoogleFonts.oswald(
+                                                    fontSize: 18.0,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Colors.black,
                                                   ),
                                                 ),
                                               ],
                                             ),
-                                          )
-                                        ],
+                                            SizedBox(
+                                              height: 15.0,
+                                            ),
+                                            RichText(
+                                              textAlign: TextAlign.start,
+                                              text: TextSpan(
+                                                children: [
+                                                  TextSpan(
+                                                    text:
+                                                        "${footerItem.text1}\n",
+                                                    style: TextStyle(
+                                                      color: kCaptionColor,
+                                                      height: 1.8,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

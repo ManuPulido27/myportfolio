@@ -28,8 +28,8 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   }
 
   animationFunc() async {
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 800), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.elasticInOut)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
@@ -165,48 +165,52 @@ Widget textWidget() {
         SizedBox(
           height: 30.0,
         ),
-        ClipRRect(
+        Material(
           borderRadius: BorderRadius.circular(15),
-          child: Container(
-            color: Colors.white70,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Text(
-                    "Jr. Flutter developer",
-                    style: TextStyle(
-                      color: kCaptionColor,
-                      fontSize: 20.0,
-                      height: 1.0,
+          elevation: 20,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(15),
+            child: Container(
+              color: Colors.white70,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Text(
+                      "Jr. Flutter developer",
+                      style: TextStyle(
+                        color: kCaptionColor,
+                        fontSize: 20.0,
+                        height: 1.0,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  Container(
-                    child: Wrap(
-                      children: [
-                        Text(
-                          "Experience working on freelance and startup contexts",
-                          style: TextStyle(
-                            color: kCaptionColor,
-                            fontSize: 17.0,
-                            height: 1.5,
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Container(
+                      child: Wrap(
+                        children: [
+                          Text(
+                            "Experience working on freelance and startup contexts",
+                            style: TextStyle(
+                              color: kCaptionColor,
+                              fontSize: 17.0,
+                              height: 1.5,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  Text(
-                    "Economics student",
-                    style: TextStyle(
-                      color: kCaptionColor,
-                      fontSize: 17.0,
-                      height: 1.0,
+                    Text(
+                      "Economics student",
+                      style: TextStyle(
+                        color: kCaptionColor,
+                        fontSize: 17.0,
+                        height: 1.0,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -214,65 +218,6 @@ Widget textWidget() {
         SizedBox(
           height: 25.0,
         ),
-        /* Row(
-          children: [
-            GestureDetector(
-              onTap: () {},
-              child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      color: Colors.white,
-                      height: 50,
-                      child: Image.asset('linkedin.png'),
-                    ),
-                  )),
-            ),
-            SizedBox(
-              width: 25.0,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Container(
-                    height: 50,
-                    child: Image.asset('github-sign.png'),
-                  )),
-            ),
-            SizedBox(
-              width: 25.0,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      height: 50,
-                      child: Image.asset('playstoree.png'),
-                    ),
-                  )),
-            ),
-            SizedBox(
-              width: 25.0,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      height: 50,
-                      child: Image.asset('applee.png'),
-                    ),
-                  )),
-            ),
-          ],
-        ),*/
       ],
     ),
   );
@@ -307,8 +252,8 @@ class AnimatedLogo extends AnimatedWidget {
       : super(key: key, listenable: animation);
 
   // Make the Tweens static because they don't change.
-  static final _opacityTween = Tween<double>(begin: 0.7, end: 0.9);
-  static final _sizeTween = Tween<double>(begin: 300, end: 350);
+  static final _opacityTween = Tween<double>(begin: 0.8, end: 0.9);
+  static final _sizeTween = Tween<double>(begin: 350, end: 350);
 
   @override
   Widget build(BuildContext context) {
@@ -321,6 +266,7 @@ class AnimatedLogo extends AnimatedWidget {
           height: _sizeTween.evaluate(animation),
           width: _sizeTween.evaluate(animation),
           child: const FlutterLogo(
+            textColor: Colors.white,
             style: FlutterLogoStyle.stacked,
           ),
         ),

@@ -82,27 +82,33 @@ class EducationSection extends StatelessWidget {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(20),
-                                        child: Container(
-                                          child: GestureDetector(
-                                            onTap: () {},
-                                            child: MouseRegion(
-                                                cursor:
-                                                    SystemMouseCursors.click,
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                  child: Container(
-                                                    height: 100,
-                                                    width: 100,
-                                                    color: Colors.white,
-                                                    child: Image.asset(
-                                                      education.photo,
-                                                      fit: BoxFit.fill,
+                                      Material(
+                                        borderRadius: BorderRadius.circular(15),
+                                        elevation: 20,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          child: Container(
+                                            child: GestureDetector(
+                                              onTap: () {},
+                                              child: MouseRegion(
+                                                  cursor:
+                                                      SystemMouseCursors.click,
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                    child: Container(
+                                                      height: 100,
+                                                      width: 100,
+                                                      color: Colors.white,
+                                                      child: Image.asset(
+                                                        education.photo,
+                                                        fit: BoxFit.fill,
+                                                      ),
                                                     ),
-                                                  ),
-                                                )),
+                                                  )),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -117,72 +123,79 @@ class EducationSection extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: ClipRRect(
+                                  child: Material(
                                     borderRadius: BorderRadius.circular(15),
-                                    child: Container(
-                                      color: Colors.white70,
-                                      width: constraints.maxWidth / 2.0 - 20.0,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              education.title,
-                                              style: GoogleFonts.oswald(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 20.0,
+                                    elevation: 20,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(15),
+                                      child: Container(
+                                        color: Colors.white70,
+                                        width:
+                                            constraints.maxWidth / 2.0 - 20.0,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                education.title,
+                                                style: GoogleFonts.oswald(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 20.0,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 5.0,
-                                            ),
-                                            Text(
-                                              education.period,
-                                              style: GoogleFonts.oswald(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.w700,
-                                                fontSize: 20.0,
+                                              SizedBox(
+                                                height: 5.0,
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 5.0,
-                                            ),
-                                            Text(
-                                              education.description,
-                                              style: TextStyle(
-                                                color: kCaptionColor,
-                                                height: 1.5,
+                                              Text(
+                                                education.period,
+                                                style: GoogleFonts.oswald(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 20.0,
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 20.0,
-                                            ),
-                                            MouseRegion(
-                                              cursor: SystemMouseCursors.click,
-                                              child: GestureDetector(
-                                                onTap: () async {
-                                                  var url = education.linkName;
+                                              SizedBox(
+                                                height: 5.0,
+                                              ),
+                                              Text(
+                                                education.description,
+                                                style: TextStyle(
+                                                  color: kCaptionColor,
+                                                  height: 1.5,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: 20.0,
+                                              ),
+                                              MouseRegion(
+                                                cursor:
+                                                    SystemMouseCursors.click,
+                                                child: GestureDetector(
+                                                  onTap: () async {
+                                                    var url =
+                                                        education.linkName;
 
-                                                  await launch(
-                                                    url,
-                                                    universalLinksOnly: true,
-                                                  );
-                                                },
-                                                child: Text(
-                                                  education.displayLink,
-                                                  style: TextStyle(
-                                                    color: Colors.blue,
+                                                    await launch(
+                                                      url,
+                                                      universalLinksOnly: true,
+                                                    );
+                                                  },
+                                                  child: Text(
+                                                    education.displayLink,
+                                                    style: TextStyle(
+                                                      color: Colors.blue,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 40.0,
-                                            )
-                                          ],
+                                              SizedBox(
+                                                height: 40.0,
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
