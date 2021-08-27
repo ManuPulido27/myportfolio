@@ -13,14 +13,14 @@ class Politic extends StatefulWidget {
 
 class _PoliticState extends State<Politic> {
   List<SlideData> list = [
-    SlideData('', 'p1.png', Colors.teal),
-    SlideData('', 'p2222.png', Colors.teal),
-    SlideData('', 'p3333.png', Colors.teal),
-    SlideData('', 'p4444.png', Colors.teal),
-    SlideData('', 'p88888888.png', Colors.teal),
-    SlideData('', 'p5555.png', Colors.teal),
-    SlideData('', 'p6666.png.png', Colors.teal),
-    SlideData('', 'p7777.png', Colors.teal)
+    SlideData('', 'assets/p1.png', Colors.teal),
+    SlideData('', 'assets/p2222.png', Colors.teal),
+    SlideData('', 'assets/p3333.png', Colors.teal),
+    SlideData('', 'assets/p4444.png', Colors.teal),
+    SlideData('', 'assets/p88888888.png', Colors.teal),
+    SlideData('', 'assets/p5555.png', Colors.teal),
+    SlideData('', 'assets/p6666.png.png', Colors.teal),
+    SlideData('', 'assets/p7777.png', Colors.teal)
   ];
 
   @override

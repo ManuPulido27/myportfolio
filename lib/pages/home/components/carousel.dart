@@ -146,7 +146,7 @@ Widget textWidget() {
             CircleAvatar(
               backgroundColor: Colors.white70,
               radius: 85,
-              backgroundImage: AssetImage('circle-cropped.png'),
+              backgroundImage: AssetImage('assets/circle-cropped.png'),
             ),
             SizedBox(
               width: 20,
@@ -190,8 +190,9 @@ Widget textWidget() {
                     Container(
                       child: Wrap(
                         children: [
-                          Text(
+                          AutoSizeText(
                             "Experience working on freelance and startup contexts",
+                            maxLines: 1,
                             style: TextStyle(
                               color: kCaptionColor,
                               fontSize: 17.0,

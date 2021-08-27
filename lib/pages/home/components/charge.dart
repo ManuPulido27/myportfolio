@@ -13,11 +13,11 @@ class Charge extends StatefulWidget {
 
 class _ChargeState extends State<Charge> {
   List<SlideData> list = [
-    SlideData('', 'c11.png', Colors.orange.shade900),
-    SlideData('', 'c55.png', Colors.orange.shade900),
-    SlideData('', 'c123.png', Colors.orange.shade900),
-    SlideData('', 'c44.png', Colors.orange.shade900),
-    SlideData('', 'c66.png', Colors.orange.shade900)
+    SlideData('', 'assets/c11.png', Colors.orange.shade900),
+    SlideData('', 'assets/c55.png', Colors.orange.shade900),
+    SlideData('', 'assets/c123.png', Colors.orange.shade900),
+    SlideData('', 'assets/c44.png', Colors.orange.shade900),
+    SlideData('', 'assets/c66.png', Colors.orange.shade900)
   ];
 
   @override

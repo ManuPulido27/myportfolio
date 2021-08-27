@@ -12,16 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Flutter Portfolio",
+      title: "MP Portfolio",
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      darkTheme: Theme.of(context).copyWith(
-        platform: TargetPlatform.android,
-        scaffoldBackgroundColor: kBackgroundColor,
-        primaryColor: kPrimaryColor,
-        canvasColor: kBackgroundColor,
-        textTheme: GoogleFonts.latoTextTheme(),
-      ),
       builder: (context, widget) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(context, widget!),
         defaultScale: true,

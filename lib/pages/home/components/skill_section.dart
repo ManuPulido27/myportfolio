@@ -8,16 +8,16 @@ import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/screen_helper.dart';
 
 List<Skill> skills = [
-  Skill(skill: "Dart", percentage: 65, icon: 'dart.png'),
+  Skill(skill: "Dart", percentage: 65, icon: 'assets/dart.png'),
   Skill(
     skill: "Python",
     percentage: 30,
-    icon: 'py.png',
+    icon: 'assets/py.png',
   ),
   Skill(
     skill: "Sql",
     percentage: 15,
-    icon: 'sql.png',
+    icon: 'assets/sql.png',
   ),
 ];
 
@@ -48,7 +48,7 @@ class SkillSection extends StatelessWidget {
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
                   child: Image.asset(
-                    "code.png",
+                    "assets/code.png",
                     width: 300.0,
                   ),
                 ),

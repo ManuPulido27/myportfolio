@@ -12,10 +12,10 @@ List<Skill> skills = [
     percentage: 100,
     icon: 'argentinaa.png',
   ),
-  Skill(skill: "English", percentage: 90, icon: 'us.png'),
-  Skill(skill: "Italian", percentage: 80, icon: 'italy.png'),
-  Skill(skill: "Portuguese", percentage: 75, icon: 'portugal.png'),
-  Skill(skill: "French", percentage: 20, icon: 'france.png'),
+  Skill(skill: "English", percentage: 90, icon: 'assets/us.png'),
+  Skill(skill: "Italian", percentage: 80, icon: 'assets/italy.png'),
+  Skill(skill: "Portuguese", percentage: 75, icon: 'assets/portugal.png'),
+  Skill(skill: "French", percentage: 20, icon: 'assets/france.png'),
 ];
 
 class SkillsTwo extends StatelessWidget {
@@ -45,7 +45,7 @@ class SkillsTwo extends StatelessWidget {
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
                   child: Image.asset(
-                    "languages.png",
+                    "assets/languages.png",
                     width: 300.0,
                   ),
                 ),
