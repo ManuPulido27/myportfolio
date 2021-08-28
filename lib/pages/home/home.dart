@@ -307,6 +307,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom: BorderSide(color: Colors.blue, width: 5))),
                 //child: Header(),
                 child: ScreenHelper(
                   desktop: Padding(
@@ -322,8 +325,10 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                 height: height,
                 child: Container(
                   decoration: BoxDecoration(
-                    gradient:
-                        LinearGradient(colors: [Colors.black26, Colors.black]),
+                    gradient: LinearGradient(colors: [
+                      Color.fromRGBO(245, 247, 250, 0.5),
+                      Color.fromRGBO(184, 198, 219, 1)
+                    ]),
                   ),
                   child: SingleChildScrollView(
                     controller: scrollController,

@@ -78,7 +78,7 @@ class _PortfolioStatsState extends State<PortfolioStats>
                         Text(
                           "ABOUT ME",
                           style: GoogleFonts.oswald(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontWeight: FontWeight.w900,
                             fontSize: 30.0,
                             height: 1.3,
@@ -123,8 +123,9 @@ class _PortfolioStatsState extends State<PortfolioStats>
                                 Text(
                                   stat.text,
                                   style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: kCaptionColor,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w800,
+                                    height: 1.8,
                                   ),
                                 )
                               ],
@@ -157,18 +158,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Experience Building Responsive and Adaptive UI',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white70,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Experience Building Responsive and Adaptive UI',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -191,18 +197,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Experience working with APIs',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white70,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Experience working with APIs',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -225,18 +236,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Experience with dynamic translation of in-app content',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white70,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Experience with dynamic translation of in-app content',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -259,18 +275,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Experience working with GeoLocation-driven data',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white70,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Experience working with GeoLocation-driven data',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -293,18 +314,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Distribution and publishing process to both\n App Store and Play Store',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white70,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Distribution and publishing process to both\n App Store and Play Store',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -327,18 +353,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Experience with GIT version control',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white70,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Experience with GIT version control',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -361,18 +392,23 @@ class _PortfolioStatsState extends State<PortfolioStats>
                               SizedBox(
                                 width: 5,
                               ),
-                              ClipRRect(
+                              Material(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Container(
-                                  color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: AutoSizeText(
-                                      'Strong Communication skills, active listener',
-                                      style: GoogleFonts.oswald(
-                                        fontSize: width * 0.025,
-                                        color: Colors.black,
-                                        height: 1,
+                                elevation: 20,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Container(
+                                    color: Colors.white,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AutoSizeText(
+                                        'Strong Communication skills, active listener',
+                                        style: GoogleFonts.oswald(
+                                          fontSize: width * 0.025,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black,
+                                          height: 1,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -421,7 +457,7 @@ class AnimateedLogo extends AnimatedWidget {
           width: _sizeTween.evaluate(animation),
           child: Container(
             height: 50,
-            child: Image.asset('point.png'),
+            child: Image.asset('assets/point.png'),
           ),
         ),
       ),

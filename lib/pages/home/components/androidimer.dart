@@ -51,21 +51,7 @@ class _AndroidImercitaState extends State<AndroidImercita> {
                       : Axis.vertical,
                   children: [
                     // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
-                    Expanded(
-                      flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                      child: Container(
-                        // Set width for image on smaller screen
-                        width: constraints.maxWidth > 720.0 ? null : 350.0,
 
-                        child: PortSlider(list),
-                      ),
-                    ),
-                    Expanded(
-                      flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                      child: SizedBox(
-                        height: 50,
-                      ),
-                    ),
                     Expanded(
                       flex: constraints.maxWidth > 720.0 ? 1 : 0,
                       child: Material(
@@ -152,7 +138,22 @@ class _AndroidImercitaState extends State<AndroidImercita> {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    Expanded(
+                      flex: constraints.maxWidth > 720.0 ? 1 : 0,
+                      child: SizedBox(
+                        height: 50,
+                      ),
+                    ),
+                    Expanded(
+                      flex: constraints.maxWidth > 720.0 ? 1 : 0,
+                      child: Container(
+                        // Set width for image on smaller screen
+                        width: constraints.maxWidth > 720.0 ? null : 350.0,
+
+                        child: PortSlider(list),
+                      ),
+                    ),
                   ],
                 ),
               ),

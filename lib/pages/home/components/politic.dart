@@ -55,22 +55,7 @@ class _PoliticState extends State<Politic> {
                             : Axis.vertical,
                         children: [
                           // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
-                          Expanded(
-                            flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                            child: Container(
-                              // Set width for image on smaller screen
-                              width:
-                                  constraints.maxWidth > 720.0 ? null : 350.0,
 
-                              child: PortSlider(list),
-                            ),
-                          ),
-                          Expanded(
-                            flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                            child: SizedBox(
-                              height: 50,
-                            ),
-                          ),
                           Expanded(
                             flex: constraints.maxWidth > 720.0 ? 1 : 0,
                             child: Material(
@@ -126,7 +111,7 @@ class _PoliticState extends State<Politic> {
                                           height: 10.0,
                                         ),
                                         Text(
-                                          "This is was my first Flutter project. It is an app with the objective to inform people about basic politic-related knowledge and also lets them test their ideological trend accroding to Nolan's Diagram. Results can later be compared with firends and family on the main graph.",
+                                          "This was my first Flutter project. It is an app with the objective to inform people about basic politic-related knowledge and also lets them test their ideological trend according to Nolan's diagram. Results can later be compared with friends and family on the main graph.",
                                           style: TextStyle(
                                             color: Colors.white,
                                             height: 1.5,
@@ -176,7 +161,23 @@ class _PoliticState extends State<Politic> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
+                          Expanded(
+                            flex: constraints.maxWidth > 720.0 ? 1 : 0,
+                            child: SizedBox(
+                              height: 50,
+                            ),
+                          ),
+                          Expanded(
+                            flex: constraints.maxWidth > 720.0 ? 1 : 0,
+                            child: Container(
+                              // Set width for image on smaller screen
+                              width:
+                                  constraints.maxWidth > 720.0 ? null : 350.0,
+
+                              child: PortSlider(list),
+                            ),
+                          ),
                         ],
                       ),
                     ),

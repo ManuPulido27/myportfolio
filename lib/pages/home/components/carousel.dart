@@ -144,7 +144,7 @@ Widget textWidget() {
         Row(
           children: [
             CircleAvatar(
-              backgroundColor: Colors.white70,
+              backgroundColor: Color.fromRGBO(184, 198, 219, 1),
               radius: 85,
               backgroundImage: AssetImage('assets/circle-cropped.png'),
             ),
@@ -156,7 +156,7 @@ Widget textWidget() {
               minFontSize: 40,
               maxFontSize: 50,
               style: GoogleFonts.oswald(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w900,
               ),
             ),
@@ -179,9 +179,10 @@ Widget textWidget() {
                     Text(
                       "Jr. Flutter developer",
                       style: TextStyle(
-                        color: kCaptionColor,
                         fontSize: 20.0,
                         height: 1.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
                     SizedBox(
@@ -194,7 +195,8 @@ Widget textWidget() {
                             "Experience working on freelance and startup contexts",
                             maxLines: 1,
                             style: TextStyle(
-                              color: kCaptionColor,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w800,
                               fontSize: 17.0,
                               height: 1.5,
                             ),
@@ -205,7 +207,8 @@ Widget textWidget() {
                     Text(
                       "Economics student",
                       style: TextStyle(
-                        color: kCaptionColor,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
                         fontSize: 17.0,
                         height: 1.0,
                       ),
@@ -267,7 +270,7 @@ class AnimatedLogo extends AnimatedWidget {
           height: _sizeTween.evaluate(animation),
           width: _sizeTween.evaluate(animation),
           child: const FlutterLogo(
-            textColor: Colors.white,
+            textColor: Colors.black,
             style: FlutterLogoStyle.stacked,
           ),
         ),

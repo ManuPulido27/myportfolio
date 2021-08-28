@@ -14,7 +14,7 @@ final List<Education> educationList = [
           'I have attended this five-years Bachelors Degree in Economics at the National University of Córdoba for three years, before taking the decision to leave Argentina to continue my studies in Italy. In this period I completed several exams as for example, Descriptive and Inferential Statistics, Advanced Multivariate Calculus, Microeconomics, History and more.',
       linkName: "https://www.unc.edu.ar/",
       period: "2017 - 2020",
-      photo: "cordo.png",
+      photo: "assets/cordo.png",
       title: 'Universidad Nacional de Córdoba - Economics',
       displayLink: 'www.unc.edu.ar'),
   Education(
@@ -22,7 +22,7 @@ final List<Education> educationList = [
           "At Uzzi College I have obtained my High School Degree with orientation to Languages. Over the years I've studied English, French and Portuguese on a daily basis there.",
       linkName: "https://www.uzzicollege.edu.ar/",
       period: "2011 - 2016",
-      photo: "uzzi.png",
+      photo: "assets/uzzi.png",
       title: 'Uzzi College - High School Degree',
       displayLink: 'www.uzzicollege.edu.ar'),
 ];
@@ -52,7 +52,7 @@ class EducationSection extends StatelessWidget {
             Text(
               "EDUCATION",
               style: GoogleFonts.oswald(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w900,
                 fontSize: 30.0,
                 height: 1.3,
@@ -163,8 +163,9 @@ class EducationSection extends StatelessWidget {
                                               Text(
                                                 education.description,
                                                 style: TextStyle(
-                                                  color: kCaptionColor,
-                                                  height: 1.5,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w800,
+                                                  height: 1.8,
                                                 ),
                                               ),
                                               SizedBox(

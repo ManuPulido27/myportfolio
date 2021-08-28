@@ -100,7 +100,7 @@ class _PortSliderState extends State<PortSlider> {
                             shape: BoxShape.circle,
                             color: _current == index
                                 ? widget.slides[index].color
-                                : Colors.white70),
+                                : widget.slides[index].color.withOpacity(0.5)),
                       );
                     }).toList()
                   : widget.slides.map((url) {

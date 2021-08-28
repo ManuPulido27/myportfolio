@@ -64,7 +64,7 @@ class SkillSection extends StatelessWidget {
                       Text(
                         "PROGRAMMING LANGUAGES",
                         style: GoogleFonts.oswald(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontWeight: FontWeight.w900,
                           fontSize: 28.0,
                           height: 1.3,
@@ -90,12 +90,19 @@ class SkillSection extends StatelessWidget {
                                     SizedBox(width: 10),
                                     Expanded(
                                       flex: skill.percentage,
-                                      child: Container(
-                                        padding: EdgeInsets.only(left: 10.0),
-                                        alignment: Alignment.centerLeft,
-                                        height: 38.0,
-                                        child: AutoSizeText(skill.skill),
-                                        color: Colors.white,
+                                      child: Material(
+                                        elevation: 20,
+                                        child: Container(
+                                          padding: EdgeInsets.only(left: 10.0),
+                                          alignment: Alignment.centerLeft,
+                                          height: 38.0,
+                                          child: AutoSizeText(
+                                            skill.skill,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w800),
+                                          ),
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                     SizedBox(
@@ -105,7 +112,7 @@ class SkillSection extends StatelessWidget {
                                       // remaining (blank part)
                                       flex: 100 - skill.percentage,
                                       child: Divider(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                       ),
                                     ),
                                     SizedBox(
@@ -114,7 +121,7 @@ class SkillSection extends StatelessWidget {
                                     Text(
                                       "${skill.percentage}%",
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 16.0,
                                       ),
                                     )

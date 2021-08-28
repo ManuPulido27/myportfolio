@@ -50,7 +50,7 @@ Widget _buildUi(double width) {
                 Text(
                   "REFERENCES",
                   style: GoogleFonts.oswald(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.w900,
                     fontSize: 30.0,
                     height: 1.3,
@@ -85,15 +85,18 @@ Widget _buildUi(double width) {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(15),
                                 child: Container(
-                                  height: 200,
+                                  height: 300,
                                   color: Colors.white70,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      testimonial.text,
-                                      style: TextStyle(
-                                        color: kCaptionColor,
-                                        height: 1.8,
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Text(
+                                        testimonial.text,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w800,
+                                          height: 1.8,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -127,7 +130,7 @@ Widget _buildUi(double width) {
                                     Text(
                                       testimonial.personName,
                                       style: GoogleFonts.oswald(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.w700,
                                         fontSize: 16.0,
                                       ),

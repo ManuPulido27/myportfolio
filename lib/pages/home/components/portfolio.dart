@@ -34,7 +34,7 @@ Widget _buildUi(double width, BuildContext context) {
               Text(
                 "PORTFOLIO",
                 style: GoogleFonts.oswald(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.w900,
                   fontSize: 30.0,
                   height: 1.3,

@@ -61,7 +61,7 @@ Widget _buildUi(double width, BuildContext context) {
               Text(
                 "CONTACT",
                 style: GoogleFonts.oswald(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.w900,
                   fontSize: 30.0,
                   height: 1.3,
@@ -89,8 +89,8 @@ Widget _buildUi(double width, BuildContext context) {
                               color: Colors.white70,
                               height: 160.0,
                               width: ScreenHelper.isMobile(context)
-                                  ? constraints.maxWidth / 2.0 - 20.0
-                                  : constraints.maxWidth / 4.0 - 20.0,
+                                  ? constraints.maxWidth / 2.0 - 15.0
+                                  : constraints.maxWidth / 4.0 - 15.0,
                               child: GestureDetector(
                                 onTap: () async {
                                   var url = footerItem.linkName;
@@ -167,7 +167,9 @@ Widget _buildUi(double width, BuildContext context) {
                                                     text:
                                                         "${footerItem.text1}\n",
                                                     style: TextStyle(
-                                                      color: kCaptionColor,
+                                                      color: Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.w800,
                                                       height: 1.8,
                                                     ),
                                                   ),
@@ -204,7 +206,9 @@ Widget _buildUi(double width, BuildContext context) {
                     child: Text(
                       "Copyright (c) 2021 Manuel Pulido. All rights Reserved",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800,
+                        height: 1.8,
                       ),
                     ),
                   ),
@@ -218,7 +222,9 @@ Widget _buildUi(double width, BuildContext context) {
                           child: Text(
                             "Built entirely using Flutter \u{1F4AA}",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w800,
+                              height: 1.8,
                             ),
                           ),
                         ),
