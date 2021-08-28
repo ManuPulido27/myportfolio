@@ -197,7 +197,6 @@ Widget textWidget() {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w800,
-                              fontSize: 17.0,
                               height: 1.5,
                             ),
                           ),
@@ -209,7 +208,6 @@ Widget textWidget() {
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w800,
-                        fontSize: 17.0,
                         height: 1.0,
                       ),
                     ),

@@ -17,10 +17,10 @@ class _PoliticState extends State<Politic> {
     SlideData('', 'assets/p2222.png', Colors.teal),
     SlideData('', 'assets/p3333.png', Colors.teal),
     SlideData('', 'assets/p4444.png', Colors.teal),
+    SlideData('', 'assets/p7777.png', Colors.teal),
     SlideData('', 'assets/p88888888.png', Colors.teal),
     SlideData('', 'assets/p5555.png', Colors.teal),
     SlideData('', 'assets/p6666.png.png', Colors.teal),
-    SlideData('', 'assets/p7777.png', Colors.teal)
   ];
 
   @override
@@ -111,7 +111,7 @@ class _PoliticState extends State<Politic> {
                                           height: 10.0,
                                         ),
                                         Text(
-                                          "This was my first Flutter project. It is an app with the objective to inform people about basic politic-related knowledge and also lets them test their ideological trend according to Nolan's diagram. Results can later be compared with friends and family on the main graph.",
+                                          "This was my first Flutter project. It is an app with the objective to inform people about basic politics knowledge and also lets them test their ideological trend according to Nolan's diagram. Results can later be compared with friends and family on the main graph.",
                                           style: TextStyle(
                                             color: Colors.white,
                                             height: 1.5,

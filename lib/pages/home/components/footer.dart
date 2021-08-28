@@ -89,8 +89,8 @@ Widget _buildUi(double width, BuildContext context) {
                               color: Colors.white70,
                               height: 160.0,
                               width: ScreenHelper.isMobile(context)
-                                  ? constraints.maxWidth / 2.0 - 15.0
-                                  : constraints.maxWidth / 4.0 - 15.0,
+                                  ? constraints.maxWidth / 2.0 - 10.0
+                                  : constraints.maxWidth / 4.0 - 10.0,
                               child: GestureDetector(
                                 onTap: () async {
                                   var url = footerItem.linkName;
@@ -164,8 +164,7 @@ Widget _buildUi(double width, BuildContext context) {
                                               text: TextSpan(
                                                 children: [
                                                   TextSpan(
-                                                    text:
-                                                        "${footerItem.text1}\n",
+                                                    text: "${footerItem.text1}",
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontWeight:

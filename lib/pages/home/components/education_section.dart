@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -160,12 +161,11 @@ class EducationSection extends StatelessWidget {
                                               SizedBox(
                                                 height: 5.0,
                                               ),
-                                              Text(
+                                              AutoSizeText(
                                                 education.description,
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w800,
-                                                  height: 1.8,
                                                 ),
                                               ),
                                               SizedBox(

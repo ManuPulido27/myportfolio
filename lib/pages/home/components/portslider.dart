@@ -91,16 +91,21 @@ class _PortSliderState extends State<PortSlider> {
               children: widget.slides.length > 1
                   ? widget.slides.map((url) {
                       int index = widget.slides.indexOf(url);
-                      return Container(
-                        width: width * 0.025,
-                        height: height * 0.011,
-                        margin: EdgeInsets.symmetric(
-                            vertical: height * 0.01, horizontal: width * 0.001),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: _current == index
-                                ? widget.slides[index].color
-                                : widget.slides[index].color.withOpacity(0.5)),
+                      return Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Container(
+                          width: width * 0.025,
+                          height: height * 0.011,
+                          margin: EdgeInsets.symmetric(
+                              vertical: height * 0.01,
+                              horizontal: width * 0.001),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: _current == index
+                                  ? widget.slides[index].color
+                                  : widget.slides[index].color
+                                      .withOpacity(0.5)),
+                        ),
                       );
                     }).toList()
                   : widget.slides.map((url) {

@@ -94,9 +94,11 @@ class SkillsTwo extends StatelessWidget {
                                           padding: EdgeInsets.only(left: 10.0),
                                           alignment: Alignment.centerLeft,
                                           height: 38.0,
-                                          child: AutoSizeText(skill.skill,
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w800)),
+                                          child: AutoSizeText(
+                                            skill.skill,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w800),
+                                          ),
                                           color: Colors.white,
                                         ),
                                       ),

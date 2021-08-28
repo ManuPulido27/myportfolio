@@ -494,7 +494,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               ),
               Container(
                 height: 50,
-                child: Image.network('assets/argentinaa.png'),
+                child: Image.asset('assets/argentinaa.png'),
               ),
               SizedBox(
                 width: 10,
