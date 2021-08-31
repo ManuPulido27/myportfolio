@@ -1,0 +1,4 @@
+//"This was my first Flutter project. It is an app with the objective to inform people about basic politics knowledge and also lets them test their ideological trend according to Nolan's diagram. Results can later be compared with friends and family on the main graph.",
+
+    // 'This was my first experience working with a startup, I developed a UI prototype for ChargeSurfing, a Portuguese electric mobility company. I followed their instructions to replicate their production app when they were considering switching to Flutter.',
+                                                                            

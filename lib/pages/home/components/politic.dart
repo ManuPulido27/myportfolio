@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/models/slidedata.dart';
@@ -111,7 +112,7 @@ class _PoliticState extends State<Politic> {
                                           height: 10.0,
                                         ),
                                         Text(
-                                          "This was my first Flutter project. It is an app with the objective to inform people about basic politics knowledge and also lets them test their ideological trend according to Nolan's diagram. Results can later be compared with friends and family on the main graph.",
+                                          'This was my first Flutter Project. It is an app with the objective to inform people about basic politic-related knowledge and also lets them test their ideological trend according to Nolan\'s diagram. Results can be compared with friends and family on the main graph.',
                                           style: TextStyle(
                                             color: Colors.white,
                                             height: 1.5,
@@ -119,42 +120,8 @@ class _PoliticState extends State<Politic> {
                                           ),
                                         ),
                                         SizedBox(
-                                          height: 25.0,
+                                          height: 30.0,
                                         ),
-                                        /* Row(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            MouseRegion(
-                                              cursor: SystemMouseCursors.click,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: kPrimaryColor,
-                                                  borderRadius: BorderRadius.circular(8.0),
-                                                ),
-                                                height: 48.0,
-                                                padding: EdgeInsets.symmetric(
-                                                  horizontal: 28.0,
-                                                ),
-                                                child: TextButton(
-                                                  onPressed: () {},
-                                                  child: Center(
-                                                    child: Text(
-                                                      "EXPLORE MORE",
-                                                      style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 13.0,
-                                                        fontWeight: FontWeight.bold,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 10.0,
-                                            ),
-                                          ],
-                                        )*/
                                       ],
                                     ),
                                   ),

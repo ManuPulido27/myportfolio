@@ -184,10 +184,15 @@ class EducationSection extends StatelessWidget {
                                                       universalLinksOnly: true,
                                                     );
                                                   },
-                                                  child: Text(
-                                                    education.displayLink,
-                                                    style: TextStyle(
-                                                      color: Colors.blue,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text(
+                                                      education.displayLink,
+                                                      style: TextStyle(
+                                                        color: Colors.blue,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),

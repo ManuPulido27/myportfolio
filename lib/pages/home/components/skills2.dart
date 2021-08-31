@@ -16,7 +16,7 @@ List<Skill> skills = [
   Skill(skill: "English", percentage: 90, icon: 'assets/us.png'),
   Skill(skill: "Italian", percentage: 80, icon: 'assets/italy.png'),
   Skill(skill: "Portuguese", percentage: 75, icon: 'assets/portugal.png'),
-  Skill(skill: "French", percentage: 20, icon: 'assets/france.png'),
+  Skill(skill: "French", percentage: 30, icon: 'assets/france.png'),
 ];
 
 class SkillsTwo extends StatelessWidget {

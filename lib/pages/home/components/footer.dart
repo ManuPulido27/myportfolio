@@ -89,8 +89,8 @@ Widget _buildUi(double width, BuildContext context) {
                               color: Colors.white70,
                               height: 160.0,
                               width: ScreenHelper.isMobile(context)
-                                  ? constraints.maxWidth / 2.0 - 10.0
-                                  : constraints.maxWidth / 4.0 - 10.0,
+                                  ? constraints.maxWidth / 2.0 - 15.0
+                                  : constraints.maxWidth / 4.0 - 15.0,
                               child: GestureDetector(
                                 onTap: () async {
                                   var url = footerItem.linkName;
