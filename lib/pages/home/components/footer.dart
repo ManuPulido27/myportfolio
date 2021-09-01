@@ -95,10 +95,15 @@ Widget _buildUi(double width, BuildContext context) {
                                 onTap: () async {
                                   var url = footerItem.linkName;
 
-                                  await launch(
-                                    url,
-                                    universalLinksOnly: true,
-                                  );
+                                  if (footerItem.title == 'LinkedIn' ||
+                                      footerItem.title == 'GitHub') {
+                                    await launch(
+                                      url,
+                                      universalLinksOnly: true,
+                                    );
+                                  } else {
+                                    print('url');
+                                  }
                                 },
                                 child: MouseRegion(
                                   cursor: SystemMouseCursors.click,
@@ -124,22 +129,16 @@ Widget _buildUi(double width, BuildContext context) {
                                                   borderRadius:
                                                       BorderRadius.circular(15),
                                                   elevation: 20,
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    child: Container(
-                                                      height: 50,
-                                                      color: footerItem.title ==
-                                                                  'LinkedIn' ||
-                                                              footerItem
-                                                                      .title ==
-                                                                  'GitHub'
-                                                          ? Colors.white
-                                                          : Colors.transparent,
-                                                      child: Image.asset(
-                                                        footerItem.iconPath,
-                                                      ),
+                                                  child: Container(
+                                                    height: 50,
+                                                    color: footerItem.title ==
+                                                                'LinkedIn' ||
+                                                            footerItem.title ==
+                                                                'GitHub'
+                                                        ? Colors.white
+                                                        : Colors.transparent,
+                                                    child: Image.asset(
+                                                      footerItem.iconPath,
                                                     ),
                                                   ),
                                                 ),
@@ -159,20 +158,12 @@ Widget _buildUi(double width, BuildContext context) {
                                             SizedBox(
                                               height: 15.0,
                                             ),
-                                            RichText(
-                                              textAlign: TextAlign.start,
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text: "${footerItem.text1}",
-                                                    style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      height: 1.8,
-                                                    ),
-                                                  ),
-                                                ],
+                                            SelectableText(
+                                              "${footerItem.text1}",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w800,
+                                                height: 1.8,
                                               ),
                                             )
                                           ],

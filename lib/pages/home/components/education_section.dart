@@ -17,7 +17,7 @@ final List<Education> educationList = [
       period: "2017 - 2020",
       photo: "assets/cordo.png",
       title: 'Universidad Nacional de Córdoba - Economics',
-      displayLink: 'www.unc.edu.ar'),
+      displayLink: 'unc.edu.ar'),
   Education(
       description:
           "At Uzzi College I have obtained my High School Degree with orientation to Languages. Over the years I've studied English, French and Portuguese on a daily basis there.",
@@ -25,7 +25,7 @@ final List<Education> educationList = [
       period: "2011 - 2016",
       photo: "assets/uzzi.png",
       title: 'Uzzi College - High School Degree',
-      displayLink: 'www.uzzicollege.edu.ar'),
+      displayLink: 'uzzicollege.edu.ar'),
 ];
 
 class EducationSection extends StatelessWidget {
@@ -188,8 +188,9 @@ class EducationSection extends StatelessWidget {
                                                     padding:
                                                         const EdgeInsets.all(
                                                             8.0),
-                                                    child: Text(
+                                                    child: AutoSizeText(
                                                       education.displayLink,
+                                                      maxLines: 1,
                                                       style: TextStyle(
                                                         color: Colors.blue,
                                                       ),
